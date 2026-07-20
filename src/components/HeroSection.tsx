@@ -23,7 +23,7 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
         <img
           src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
           alt="Happy, healthy dog"
-          className="w-full h-full object-cover object-[center_15%] scale-[1.25] translate-x-[10%] lg:translate-x-0 lg:scale-[1.5] lg:origin-[center_30%] opacity-90"
+          className="w-full h-full object-cover object-[center_5%] scale-[1.25] translate-x-[10%] lg:translate-x-0 lg:scale-[1.5] lg:origin-[center_30%] opacity-90"
         />
       </motion.div>
 
