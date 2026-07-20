@@ -51,7 +51,7 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
           </motion.div>
 
           <motion.p
-            className="text-base sm:text-lg md:text-xl text-gray-300 mt-64 sm:mt-72 lg:mt-0 mb-8 lg:mb-10 max-w-lg font-body"
+            className="text-base sm:text-lg md:text-xl text-gray-200/90 font-body leading-relaxed tracking-normal mt-64 sm:mt-72 lg:mt-0 mb-8 lg:mb-10 max-w-lg font-light drop-shadow-md"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
@@ -67,17 +67,18 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
           >
             <button
               onClick={onBookClick}
-              className="bg-orange hover:bg-orange-hover text-white px-8 py-4 rounded-sm font-medium flex items-center justify-center gap-2 group transition-all"
+              className="group relative flex items-center justify-center gap-2.5 bg-gradient-to-r from-orange to-amber-500 text-white px-6 py-3 rounded-full font-semibold text-sm sm:text-base shadow-md shadow-orange/30 hover:shadow-lg hover:shadow-orange/50 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 overflow-hidden"
             >
-              <Calendar size={20} className="group-hover:scale-110 transition-transform" />
-              Book Appointment
+              <Calendar size={18} className="group-hover:rotate-12 transition-transform duration-300" />
+              <span>Book Appointment</span>
+              <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             </button>
             <a 
               href="#services"
-              className="border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-sm font-medium flex items-center justify-center gap-2 transition-all"
+              className="group flex items-center justify-center gap-2.5 bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:border-white/40 text-white px-6 py-3 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 shadow-md shadow-black/20"
             >
-              Our Services
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              <span>Our Services</span>
+              <ArrowRight size={18} className="group-hover:translate-x-1.5 transition-transform duration-300 text-orange" />
             </a>
           </motion.div>
         </div>
