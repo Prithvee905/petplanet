@@ -28,8 +28,6 @@ export function Navbar({ onBookClick }: NavbarProps) {
     { name: 'Contact', href: '/contact' },
   ];
 
-  const isLightNavbar = isHome && !isScrolled;
-
   return (
     <>
       <motion.nav
@@ -44,15 +42,12 @@ export function Navbar({ onBookClick }: NavbarProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2">
-              <span className={cn(
-                "text-2xl font-display font-bold tracking-tight transition-colors duration-300",
-                isLightNavbar ? "text-black" : "text-white"
-              )}>
+              <span className="text-2xl font-display font-bold tracking-tight text-white">
                 Petplanet <span className="text-orange">.</span>
               </span>
             </Link>
           </div>
- 
+
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
@@ -61,7 +56,7 @@ export function Navbar({ onBookClick }: NavbarProps) {
                 to={link.href}
                 className={cn(
                   'text-sm font-medium transition-colors hover:text-orange',
-                  location.pathname === link.href ? 'text-orange' : (isLightNavbar ? 'text-gray-800' : 'text-gray-200')
+                  location.pathname === link.href ? 'text-orange' : 'text-gray-200'
                 )}
               >
                 {link.name}
@@ -74,15 +69,12 @@ export function Navbar({ onBookClick }: NavbarProps) {
               Book Appointment
             </button>
           </div>
- 
+
           {/* Mobile Menu Toggle */}
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={cn(
-                "transition-colors duration-300",
-                isLightNavbar ? "text-black" : "text-white"
-              )}
+              className="text-white"
             >
               {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
