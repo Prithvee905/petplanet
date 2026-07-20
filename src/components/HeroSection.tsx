@@ -19,11 +19,11 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
         {/* Gradient that fades the image into the black background on the left */}
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent z-10" />
         
-        {/* Zoomed-in happy dog face, positioned on the right side */}
+        {/* Zoomed-in happy dog face, positioned on the right side, scaled only on desktop to fit screen ratios */}
         <img
           src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
           alt="Happy, healthy dog"
-          className="w-full h-full object-cover object-[center_30%] scale-[1.5] origin-[center_30%] opacity-90"
+          className="w-full h-full object-cover object-[80%_30%] lg:object-[center_30%] lg:scale-[1.5] lg:origin-[center_30%] opacity-90"
         />
       </motion.div>
 
