@@ -1,8 +1,17 @@
 import { motion } from 'framer-motion';
+import { Doodle } from './Doodle';
 
 export function DiagnosticsSection() {
   return (
-    <section id="diagnostics" className="py-24 bg-black text-white relative z-20">
+    <section id="diagnostics" className="py-24 bg-black text-white relative overflow-hidden z-20">
+      {/* Decorative Doodles */}
+      <Doodle type="swirl" className="absolute top-10 left-10 w-24 h-24 z-10 text-white/5" />
+      <Doodle type="paw" className="absolute bottom-10 right-10 w-16 h-16 rotate-[25deg] z-10 text-white/5" />
+      <Doodle type="sparkle" className="absolute top-1/2 left-[10%] w-12 h-12 z-10 text-orange/30" />
+      <Doodle type="bone" className="absolute top-10 right-[25%] w-18 h-18 rotate-[-15deg] z-10 text-white/10" />
+      <Doodle type="paw" className="absolute top-1/3 right-[5%] w-16 h-16 rotate-[45deg] z-10 text-white/5" />
+      <Doodle type="swirl" className="absolute bottom-12 left-5 w-24 h-24 rotate-[60deg] z-10 text-white/5" />
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           

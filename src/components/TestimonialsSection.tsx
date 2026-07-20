@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Doodle } from './Doodle';
 
 const testimonials = [
   {
@@ -21,6 +22,10 @@ const testimonials = [
 export function TestimonialsSection() {
   return (
     <section className="py-24 bg-white relative z-20 overflow-hidden">
+      {/* Decorative Doodles */}
+      <Doodle type="paw" className="top-10 left-5 w-20 h-20 rotate-[-10deg] text-orange/30" />
+      <Doodle type="dog" className="bottom-10 right-10 w-24 h-24 text-orange/25" />
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">Happy <span className="text-orange">Pets</span> & Parents.</h2>

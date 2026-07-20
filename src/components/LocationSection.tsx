@@ -1,12 +1,17 @@
 import { motion } from 'framer-motion';
 import { MapPin, Clock, Phone } from 'lucide-react';
 import { WHATSAPP_NUMBER } from '../config';
+import { Doodle } from './Doodle';
 
 export function LocationSection() {
   return (
-    <section id="contact" className="py-24 bg-gray-100 relative z-20">
+    <section id="contact" className="py-24 bg-gray-100 relative z-20 overflow-hidden">
+      {/* Decorative Doodles */}
+      <Doodle type="paw" className="top-10 right-10 w-24 h-24 rotate-[15deg] text-orange/20" />
+      <Doodle type="arrow" className="bottom-12 left-8 w-20 h-20 -rotate-45 text-orange/30" />
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 shadow-2xl rounded-sm overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 shadow-2xl rounded-2xl overflow-hidden">
           
           <motion.div
             className="bg-black text-white p-12 md:p-16 flex flex-col justify-center"

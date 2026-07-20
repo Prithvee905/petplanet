@@ -1,16 +1,15 @@
 import { motion } from 'framer-motion';
+import { Doodle } from './Doodle';
 
 const doctors = [
   {
-    name: 'Dr. M. Kiran Kumar',
-    // TODO: verify exact title with client before launch
+    name: 'Dr. Kiran Kumar',
     specialty: 'Veterinary Physician',
     bio: 'With over 20 years of hands-on experience, Dr. Kiran is a highly experienced small-animal veterinarian. He expertly handles both routine preventive care and complex surgical cases, including tumor removals, all while maintaining a calm, trusted bedside manner that puts pets and parents at ease.',
     image: 'https://images.unsplash.com/photo-1612349317150-e410f624c427?q=80&w=2070&auto=format&fit=crop',
   },
   {
     name: 'Dr. Meghana',
-    // TODO: verify exact title and bio details with client before launch
     specialty: 'Veterinarian',
     bio: 'Practicing alongside Dr. Kiran, Dr. Meghana is dedicated to providing compassionate, thorough patient care. She utilizes the clinic\'s advanced diagnostic tools to ensure every pet receives an accurate diagnosis and a personalized treatment plan.',
     image: 'https://images.unsplash.com/photo-1594824436951-7f12bc574828?q=80&w=2071&auto=format&fit=crop',
@@ -19,7 +18,11 @@ const doctors = [
 
 export function DoctorsSection() {
   return (
-    <section id="doctors" className="py-24 bg-white relative z-20">
+    <section id="doctors" className="py-24 bg-white relative z-20 overflow-hidden">
+      {/* Decorative Doodles */}
+      <Doodle type="bone" className="top-12 right-10 w-24 h-24 rotate-[30deg] text-orange/20" />
+      <Doodle type="sparkle" className="bottom-8 left-10 w-16 h-16 text-orange/30" />
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="mb-16"
