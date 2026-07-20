@@ -36,7 +36,7 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
       <Doodle type="sparkle" className="top-24 right-[55%] w-10 h-10 z-20 text-orange/40" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-30 w-full">
-        <div className="max-w-2xl">
+        <div className="max-w-2xl flex flex-col min-h-[calc(100vh-180px)] lg:min-h-0 pb-16 lg:pb-0">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -51,7 +51,7 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
           </motion.div>
 
           <motion.p
-            className="text-base sm:text-lg md:text-xl text-gray-200/90 font-body leading-relaxed tracking-normal mt-64 sm:mt-72 lg:mt-24 mb-6 lg:mb-8 max-w-lg font-light drop-shadow-md"
+            className="text-base sm:text-lg md:text-xl text-gray-200/90 font-body leading-relaxed tracking-normal mt-auto lg:mt-24 mb-6 lg:mb-8 max-w-lg font-light drop-shadow-md"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
