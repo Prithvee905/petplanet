@@ -51,7 +51,7 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
           </motion.div>
 
           <motion.p
-            className="text-base sm:text-lg md:text-xl text-gray-200/90 font-body leading-relaxed tracking-normal mt-64 sm:mt-72 lg:mt-0 mb-8 lg:mb-10 max-w-lg font-light drop-shadow-md"
+            className="text-base sm:text-lg md:text-xl text-gray-200/90 font-body leading-relaxed tracking-normal mt-64 sm:mt-72 lg:mt-8 mb-8 lg:mb-10 max-w-lg font-light drop-shadow-md"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
