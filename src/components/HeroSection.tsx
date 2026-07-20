@@ -23,7 +23,7 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
         <img
           src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
           alt="Happy, healthy dog"
-          className="w-full h-full object-cover object-[85%_20%] lg:object-[center_30%] lg:scale-[1.5] lg:origin-[center_30%] opacity-90"
+          className="w-full h-full object-cover object-[25%_15%] lg:object-[center_30%] lg:scale-[1.5] lg:origin-[center_30%] opacity-90"
         />
       </motion.div>
 
@@ -51,7 +51,7 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
           </motion.div>
 
           <motion.p
-            className="text-lg md:text-xl text-gray-300 mb-20 lg:mb-10 max-w-lg font-body"
+            className="text-lg md:text-xl text-gray-300 mb-28 lg:mb-10 max-w-lg font-body"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
