@@ -51,7 +51,7 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
           </motion.div>
 
           <motion.p
-            className="text-base sm:text-lg md:text-xl text-gray-200/90 font-body leading-relaxed tracking-normal mt-auto lg:mt-24 mb-6 lg:mb-8 max-w-lg font-light drop-shadow-md"
+            className="text-base sm:text-lg md:text-xl text-gray-200/90 font-body leading-relaxed tracking-normal mt-auto lg:mt-24 mb-6 lg:mb-8 max-w-lg font-light drop-shadow-md translate-y-6 sm:translate-y-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
@@ -60,7 +60,7 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 mt-6 sm:mt-0 translate-y-4 sm:translate-y-0"
+            className="flex flex-col sm:flex-row gap-4 mt-10 sm:mt-0 translate-y-8 sm:translate-y-0"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
