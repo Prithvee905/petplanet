@@ -83,6 +83,46 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
           </motion.div>
         </div>
       </div>
+
+      {/* Customer Attracting Animated Moving Bar (Full Screen Edge-to-Edge, Normal Corners) */}
+      <motion.div
+        className="absolute bottom-0 left-0 right-0 w-full z-30 bg-white/10 backdrop-blur-md border-y border-white/15 py-3.5 overflow-hidden pointer-events-none rounded-none shadow-lg"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+      >
+        <motion.div
+          className="flex items-center gap-6 whitespace-nowrap shrink-0 w-full"
+          animate={{ x: [-800, 0] }}
+          transition={{
+            x: {
+              repeat: Infinity,
+              repeatType: "loop",
+              duration: 20,
+              ease: "linear",
+            },
+          }}
+        >
+          {[
+            { icon: '⚡', text: 'Consultation Fee: Starting at ₹500' },
+            { icon: '⭐', text: '4.7 ★ Rating (1,800+ Happy Clients)' },
+            { icon: '🐾', text: '20+ Years Veterinary Experience' },
+            { icon: '🩺', text: 'In-House Diagnostics & X-Ray' },
+            { icon: '⏰', text: 'Open 7 Days: 8:00 AM - 9:00 PM' },
+            { icon: '⚡', text: 'Consultation Fee: Starting at ₹500' },
+            { icon: '⭐', text: '4.7 ★ Rating (1,800+ Happy Clients)' },
+            { icon: '🐾', text: '20+ Years Veterinary Experience' },
+            { icon: '🩺', text: 'In-House Diagnostics & X-Ray' },
+            { icon: '⏰', text: 'Open 7 Days: 8:00 AM - 9:00 PM' },
+          ].map((item, idx) => (
+            <div key={idx} className="flex items-center gap-3 text-xs sm:text-sm text-gray-200 shrink-0">
+              <span className="text-base">{item.icon}</span>
+              <span className="font-medium tracking-wide">{item.text}</span>
+              <span className="text-orange font-bold text-sm ml-4">•</span>
+            </div>
+          ))}
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
