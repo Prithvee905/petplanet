@@ -10,7 +10,7 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
   return (
     <section className="relative min-h-screen flex items-start lg:items-center bg-black overflow-hidden pt-28 pb-16 lg:py-20" id="home">
       {/* Background with real clinic image and overlay */}
-      <motion.div 
+      <motion.div
         className="absolute inset-y-0 right-0 w-full lg:w-[55%] z-0 overflow-hidden"
         initial={{ scale: 1.05, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -18,7 +18,7 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
       >
         {/* Gradient that fades from top-to-bottom on mobile and left-to-right on desktop */}
         <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-black via-black/60 to-transparent z-10" />
-        
+
         {/* Zoomed-in happy dog face, positioned on the right side */}
         <img
           src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
@@ -75,7 +75,7 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
                 <span>Book Appointment</span>
                 <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </button>
-              <a 
+              <a
                 href="#services"
                 className="group flex items-center justify-center gap-2.5 bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:border-white/40 text-white px-6 py-3 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 shadow-md shadow-black/20"
               >

@@ -8,8 +8,8 @@ export default {
     extend: {
       colors: {
         orange: {
-          DEFAULT: '#FF6B1A',
-          hover: '#E55A0E',
+          DEFAULT: '#FF8833',
+          hover: '#FF6B1A',
           light: '#FFE4D6',
         },
         black: {

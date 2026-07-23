@@ -48,7 +48,7 @@ export function PriceSlider() {
           onChange={(e) => setWeight(Number(e.target.value))}
           className="w-full h-2 bg-gray-800 rounded-lg appearance-none cursor-pointer accent-orange"
           style={{
-            background: `linear-gradient(to right, #FF6B1A 0%, #FF6B1A ${(weight / 40) * 100}%, #1f2937 ${(weight / 40) * 100}%, #1f2937 100%)`
+            background: `linear-gradient(to right, #FF8833 0%, #FF8833 ${(weight / 40) * 100}%, #1f2937 ${(weight / 40) * 100}%, #1f2937 100%)`
           }}
         />
         <div className="flex justify-between mt-2 text-xs text-gray-500 font-mono">
