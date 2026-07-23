@@ -12,8 +12,8 @@ export function Home({ onBookClick }: HomeProps) {
   return (
     <>
       <Helmet>
-        <title>Petplanet Dog Clinic | Expert Care in Hyderabad</title>
-        <meta name="description" content="State-of-the-art diagnostics and compassionate veterinary care in Ramakrishnapuram, Hyderabad. Over 20 years of experience." />
+        <title>Pet Planet Dog Clinic & Animal Diagnostics | Hyderabad</title>
+        <meta name="description" content="17+ years of clinical excellence, major & minor surgeries, automated vaccination reminders, and advanced animal diagnostics at Andal Homes in RK Puram, Hyderabad." />
       </Helmet>
       
       <HeroSection onBookClick={onBookClick} />

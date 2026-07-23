@@ -10,7 +10,7 @@ const testimonials = [
   {
     name: 'Clinic Client',
     pet: 'Dog Owner',
-    text: 'The facility is incredibly clean, modern, and well-organized. You can tell they have state-of-the-art equipment, which instantly made me feel confident that my pet was in the best hands.',
+    text: 'The facility is incredibly clean, modern, and well-organized. You can tell they have top-tier clinical equipment, which instantly made me feel confident that my pet was in the best hands.',
   },
   {
     name: 'Pet Parent',

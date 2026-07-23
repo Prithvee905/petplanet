@@ -1,52 +1,57 @@
 import { motion } from 'framer-motion';
-import { Syringe, Stethoscope, HeartPulse, Activity, Scissors, AlertCircle, Pill, Microscope, ClipboardPlus } from 'lucide-react';
+import { Syringe, Stethoscope, HeartPulse, Activity, Scissors, AlertCircle, Pill, Microscope, ClipboardPlus, Video } from 'lucide-react';
 import { Doodle } from './Doodle';
 
 const services = [
   {
     icon: Stethoscope,
     title: 'Preventive Care & Routine Check-ups',
-    description: 'Regular wellness exams to catch potential health issues early and keep your pet thriving.',
+    description: 'Comprehensive prophylactic wellness examinations, vital sign evaluations, and early health screening for small animals.',
   },
   {
     icon: Syringe,
-    title: 'Vaccinations / Immunization',
-    description: 'Core and lifestyle vaccines tailored for dogs, cats, and other small animals to prevent dangerous diseases.',
+    title: 'Vaccinations & Automated Reminders',
+    description: 'Core and lifestyle immunization protocols tailored for your pet. We send automated reminder notifications for your pet’s next scheduled vaccination date so they stay fully protected.',
   },
   {
-    icon: HeartPulse,
-    title: 'Dental Treatments',
-    description: 'Professional dental cleaning, checks, and procedures to prevent oral disease and maintain overall health.',
-  },
-  {
-    icon: Microscope,
-    title: 'Advanced Diagnostics',
-    description: 'State-of-the-art diagnostic equipment including X-ray, ultrasound, and lab diagnostics for fast, accurate diagnosis.',
+    icon: Video,
+    title: 'Online Consultation',
+    description: 'Virtual tele-triage and remote veterinary medical consultations, providing expert diagnostic advice and guidance from the comfort of home.',
   },
   {
     icon: Activity,
-    title: 'Veterinary Treatment & Surgery',
-    description: 'General medical treatment and specialized surgical procedures, including tumor removals, with decades of surgical experience.',
+    title: 'Veterinary Major & Minor Surgeries',
+    description: 'Specialized soft-tissue surgical interventions ranging from routine minor procedures to complex major surgeries (including tumor excision) conducted under aseptic protocols.',
   },
   {
-    icon: Scissors,
-    title: 'Pet Grooming',
-    description: 'Premium grooming services to keep your pet clean, comfortable, and looking their best.',
+    icon: Microscope,
+    title: 'Advanced Clinical Diagnostics',
+    description: 'In-house diagnostic laboratory equipment, digital radiography (X-ray), and ultrasonography for immediate, accurate diagnostic evaluation.',
   },
   {
-    icon: AlertCircle,
-    title: 'Emergency Services',
-    description: 'Urgent medical attention when your pet needs it most, with rapid response protocols and expert care.',
+    icon: HeartPulse,
+    title: 'Dental Treatments & Oral Care',
+    description: 'Professional ultrasonic scaling, oral prophylaxis, and comprehensive dental health treatments to prevent periodontal disease.',
   },
   {
     icon: Pill,
-    title: 'Pharmacy',
-    description: 'Fully stocked on-site pharmacy for immediate access to prescribed medicines and pet health products.',
+    title: 'Pet Store',
+    description: 'Fully equipped on-site store stocking prescription veterinary pharmaceuticals, specialized clinical nutrition/food, wellness supplements, and premium pet accessories.',
+  },
+  {
+    icon: Scissors,
+    title: 'Pet Grooming & Hygiene',
+    description: 'Professional hygienic grooming, coat styling, medicated baths, and ear/nail care for overall skin and coat health.',
+  },
+  {
+    icon: AlertCircle,
+    title: 'Emergency Medical Services',
+    description: 'Immediate medical triage and urgent critical care protocols for trauma, acute illness, and severe systemic emergencies.',
   },
   {
     icon: ClipboardPlus,
     title: 'OPD / Outpatient Consultations',
-    description: 'Convenient outpatient services and expert consultations for your pet’s daily health concerns.',
+    description: 'Convenient outpatient medical consultations and ongoing therapeutic management for acute and chronic conditions.',
   },
 ];
 

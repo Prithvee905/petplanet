@@ -6,8 +6,8 @@ export function ServicesPage() {
   return (
     <>
       <Helmet>
-        <title>Our Services & Pricing | Petplanet Clinic</title>
-        <meta name="description" content="Comprehensive veterinary services including vaccinations, dental care, surgery, and grooming at Petplanet Dog Clinic. Estimate your pricing online." />
+        <title>Our Services & Pricing | Pet Planet Dog Clinic</title>
+        <meta name="description" content="Comprehensive veterinary services including vaccinations with automated reminders, major & minor surgeries, online consultations, and pet store at Pet Planet Dog Clinic." />
       </Helmet>
       
       <div className="pt-24 bg-gray-100">

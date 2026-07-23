@@ -6,24 +6,37 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-6">
-              <span className="text-3xl font-display font-bold tracking-tight text-white">
-                Petplanet <span className="text-orange">.</span>
+            <Link to="/" className="flex items-center gap-3 mb-6 group">
+              <div className="bg-white p-1.5 rounded-lg shadow-md border border-white/20 group-hover:scale-105 transition-transform duration-300 flex items-center justify-center">
+                <img 
+                  src="/logo.png" 
+                  alt="Pet Planet Logo" 
+                  className="h-12 w-auto object-contain"
+                />
+              </div>
+              <span className="text-3xl font-display font-bold tracking-tight text-white group-hover:text-orange transition-colors">
+                Pet Planet <span className="text-orange">.</span>
               </span>
             </Link>
-            <p className="text-gray-400 max-w-sm mb-6 leading-relaxed">
-              Premium veterinary care and diagnostics in Hyderabad. We treat your pets like family.
+            <p className="text-gray-400 max-w-sm mb-4 leading-relaxed font-body">
+              Advanced veterinary medical care, major & minor surgeries, and comprehensive animal diagnostics in Hyderabad.
+            </p>
+            <p className="text-sm text-gray-500 font-body">
+              11-13-167, Andal Homes, Alkapuri Road No. 3, RK Puram, Saroornagar, Kothapet, Hyderabad 500102.
             </p>
           </div>
 
           <div>
             <h4 className="text-lg font-display font-bold mb-6 text-white uppercase tracking-wider">Quick Links</h4>
-            <ul className="space-y-4">
+            <ul className="space-y-3">
               {[
                 { name: 'Home', path: '/' },
+                { name: 'About Us', path: '/about' },
                 { name: 'Services', path: '/services' },
-                { name: 'Doctors', path: '/doctors' },
                 { name: 'Diagnostics', path: '/diagnostics' },
+                { name: 'Doctors', path: '/doctors' },
+                { name: 'Testimonials', path: '/testimonials' },
+                { name: 'Gallery', path: '/gallery' },
                 { name: 'Contact', path: '/contact' }
               ].map((link) => (
                 <li key={link.name}>
@@ -37,9 +50,9 @@ export function Footer() {
 
           <div>
             <h4 className="text-lg font-display font-bold mb-6 text-white uppercase tracking-wider">Services</h4>
-            <ul className="space-y-4">
-              {['Vaccinations', 'Dental Care', 'X-Ray & Ultrasound', 'Emergency'].map((service) => (
-                <li key={service} className="text-gray-400">
+            <ul className="space-y-3">
+              {['Vaccinations & Reminders', 'Online Consultation', 'Major & Minor Surgeries', 'Pet Store & Pharmacy', 'X-Ray & Ultrasound', 'Emergency Triage'].map((service) => (
+                <li key={service} className="text-gray-400 text-sm">
                   {service}
                 </li>
               ))}
@@ -48,7 +61,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} Petplanet Dog Clinic. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Pet Planet Dog Clinic & Animal Diagnostics. All rights reserved.</p>
           <div className="mt-4 md:mt-0 flex space-x-6">
             <a href="#" className="hover:text-orange transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-orange transition-colors">Terms of Service</a>

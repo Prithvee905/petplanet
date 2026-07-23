@@ -19,22 +19,22 @@ export function AboutSection() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 leading-tight">
-              A modern approach to <span className="text-orange">veterinary care.</span>
+              A modern approach to <span className="text-orange">veterinary medical care.</span>
             </h2>
             <p className="text-lg text-gray-800 mb-6 font-body leading-relaxed">
-              At Petplanet Dog Clinic & Animal Diagnostics, we believe your best friend deserves the absolute best care. Located in the heart of Ramakrishnapuram, Kothapet, our state-of-the-art facility combines advanced diagnostic technology with a warm, compassionate approach.
+              At Pet Planet Dog Clinic & Animal Diagnostics, we provide evidence-based veterinary care and advanced diagnostic evaluations. Our facility integrates cutting-edge diagnostic imaging with compassionate clinical protocols.
             </p>
             <p className="text-lg text-gray-800 font-body leading-relaxed">
-              From routine checkups to complex surgical cases, Dr. M. Kiran Kumar, Dr. Meghana, and our dedicated team are highly experienced in treating dogs, cats, and other small animals, ensuring they live long, healthy, and happy lives.
+              From prophylactic wellness exams to complex soft-tissue surgeries, Dr. M. Kiran Kumar (20+ years veterinary medical experience), Dr. Meghana, and our clinical team are dedicated to maintaining the health and longevity of your small animal companions.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-2 gap-6">
             {[
-              { number: '20+', label: 'Years Experience' },
-              { number: '4.7', label: 'Average Rating' },
-              { number: '1,800+', label: 'Happy Client Reviews' },
-              { number: '✓', label: 'Trusted on Practo' },
+              { number: '17+', label: 'Years Clinic Excellence' },
+              { number: '4.7', label: 'Average Client Rating' },
+              { number: '1,800+', label: 'Happy Pet Patient Reviews' },
+              { number: '✓', label: 'Certified & Verified' },
             ].map((stat, i) => (
               <motion.div
                 key={i}

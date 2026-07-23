@@ -5,7 +5,7 @@ export function NotFound() {
   return (
     <>
       <Helmet>
-        <title>Page Not Found | Petplanet Clinic</title>
+        <title>Page Not Found | Pet Planet Dog Clinic</title>
       </Helmet>
       
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 text-center px-4">

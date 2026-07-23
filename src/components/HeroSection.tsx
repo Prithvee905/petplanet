@@ -9,21 +9,26 @@ interface HeroSectionProps {
 export function HeroSection({ onBookClick }: HeroSectionProps) {
   return (
     <section className="relative min-h-screen flex items-start lg:items-center bg-black overflow-hidden pt-28 pb-16 lg:py-20" id="home">
-      {/* Background with real clinic image and overlay */}
+      {/* Hero Dog - face and neck portrait, right side */}
       <motion.div
         className="absolute inset-y-0 right-0 w-full lg:w-[55%] z-0 overflow-hidden"
-        initial={{ scale: 1.05, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
-        {/* Gradient that fades from top-to-bottom on mobile and left-to-right on desktop */}
-        <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-black via-black/60 to-transparent z-10" />
+        {/* Left-side fade into hero text */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent z-10 pointer-events-none" />
+        {/* Bottom fade */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10 pointer-events-none" />
+        {/* Top fade */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-transparent z-10 pointer-events-none" />
 
-        {/* Zoomed-in happy dog face, positioned on the right side */}
+        {/* Dog image — face + neck, fills right column, cropped at bottom */}
         <img
-          src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-          alt="Happy, healthy dog"
-          className="w-full h-full object-cover object-[center_30%] scale-[1.5] origin-[center_30%] opacity-90"
+          src="/hero-dog.png"
+          alt="Pet Planet Husky Dog Patient"
+          className="absolute inset-0 w-full h-full object-cover object-top opacity-100"
+          style={{ objectPosition: 'center 42%' }}
         />
       </motion.div>
 
@@ -58,9 +63,8 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              A state-of-the-art facility providing comprehensive veterinary care and advanced diagnostics for your pet in Ramakrishnapuram.
+              A premier, fully-equipped veterinary facility providing comprehensive clinical care, major & minor surgeries, and advanced animal diagnostics.
             </motion.p>
-
             <motion.div
               className="flex flex-col sm:flex-row gap-4"
               initial={{ opacity: 0, y: 20 }}
@@ -87,41 +91,53 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
         </div>
       </div>
 
-      {/* Customer Attracting Animated Moving Bar (Full Screen Edge-to-Edge, Normal Corners) */}
+      {/* Seamless Infinite Marquee Ticker */}
       <motion.div
         className="absolute bottom-0 left-0 right-0 w-full z-30 bg-white/10 backdrop-blur-md border-y border-white/15 py-3.5 overflow-hidden pointer-events-none rounded-none shadow-lg"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
       >
+        {/* Two duplicate sets side by side — animating -50% makes it seamlessly loop */}
         <motion.div
-          className="flex items-center gap-6 whitespace-nowrap shrink-0 w-full"
-          animate={{ x: [-800, 0] }}
+          className="flex items-center gap-0 whitespace-nowrap"
+          style={{ width: 'max-content' }}
+          animate={{ x: ['0%', '-50%'] }}
           transition={{
             x: {
               repeat: Infinity,
-              repeatType: "loop",
-              duration: 20,
-              ease: "linear",
+              repeatType: 'loop',
+              duration: 28,
+              ease: 'linear',
             },
           }}
         >
+          {/* Set 1 */}
           {[
             { icon: '⚡', text: 'Consultation Fee: Starting at ₹500' },
-            { icon: '⭐', text: '4.7 ★ Rating (1,800+ Happy Clients)' },
-            { icon: '🐾', text: '20+ Years Veterinary Experience' },
-            { icon: '🩺', text: 'In-House Diagnostics & X-Ray' },
-            { icon: '⏰', text: 'Open 7 Days: 8:00 AM - 9:00 PM' },
-            { icon: '⚡', text: 'Consultation Fee: Starting at ₹500' },
-            { icon: '⭐', text: '4.7 ★ Rating (1,800+ Happy Clients)' },
-            { icon: '🐾', text: '20+ Years Veterinary Experience' },
-            { icon: '🩺', text: 'In-House Diagnostics & X-Ray' },
+            { icon: '⭐', text: '4.7 ★ Rating (1,800+ Verified Clients)' },
+            { icon: '🐾', text: '17+ Years Clinic Excellence' },
+            { icon: '🩺', text: '20+ Years Vet Surgical Expertise' },
             { icon: '⏰', text: 'Open 7 Days: 8:00 AM - 9:00 PM' },
           ].map((item, idx) => (
-            <div key={idx} className="flex items-center gap-3 text-xs sm:text-sm text-gray-200 shrink-0">
+            <div key={`a-${idx}`} className="flex items-center gap-3 text-xs sm:text-sm text-gray-200 shrink-0 px-6">
               <span className="text-base">{item.icon}</span>
               <span className="font-medium tracking-wide">{item.text}</span>
-              <span className="text-orange font-bold text-sm ml-4">•</span>
+              <span className="text-orange font-bold text-sm ml-2">•</span>
+            </div>
+          ))}
+          {/* Set 2 — exact duplicate for seamless loop */}
+          {[
+            { icon: '⚡', text: 'Consultation Fee: Starting at ₹500' },
+            { icon: '⭐', text: '4.7 ★ Rating (1,800+ Verified Clients)' },
+            { icon: '🐾', text: '17+ Years Clinic Excellence' },
+            { icon: '🩺', text: '20+ Years Vet Surgical Expertise' },
+            { icon: '⏰', text: 'Open 7 Days: 8:00 AM - 9:00 PM' },
+          ].map((item, idx) => (
+            <div key={`b-${idx}`} className="flex items-center gap-3 text-xs sm:text-sm text-gray-200 shrink-0 px-6">
+              <span className="text-base">{item.icon}</span>
+              <span className="font-medium tracking-wide">{item.text}</span>
+              <span className="text-orange font-bold text-sm ml-2">•</span>
             </div>
           ))}
         </motion.div>

@@ -32,7 +32,7 @@ export function Layout({ children }: LayoutProps) {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-black font-body selection:bg-orange selection:text-white overflow-x-hidden relative">
+    <div className="min-h-screen flex flex-col bg-white text-black font-body selection:bg-orange selection:text-white overflow-x-hidden relative min-w-[1280px]">
       {/* Global Background Doodles Layer (Universally subtle opacity-4%) */}
       <div className="fixed inset-0 pointer-events-none z-0 opacity-[0.04] overflow-hidden select-none">
         {/* Paws scattered at different heights */}

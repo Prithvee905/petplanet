@@ -9,9 +9,12 @@ import { AppointmentModal } from './components/AppointmentModal';
 import { ScrollToTop } from './components/ScrollToTop';
 
 import { Home } from './pages/Home';
+import { AboutPage } from './pages/AboutPage';
 import { ServicesPage } from './pages/ServicesPage';
 import { DiagnosticsPage } from './pages/DiagnosticsPage';
 import { DoctorsPage } from './pages/DoctorsPage';
+import { TestimonialsPage } from './pages/TestimonialsPage';
+import { GalleryPage } from './pages/GalleryPage';
 import { ContactPage } from './pages/ContactPage';
 import { NotFound } from './pages/NotFound';
 
@@ -31,9 +34,12 @@ function App() {
           
           <Routes>
             <Route path="/" element={<Home onBookClick={handleBookClick} />} />
+            <Route path="/about" element={<AboutPage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/diagnostics" element={<DiagnosticsPage />} />
             <Route path="/doctors" element={<DoctorsPage />} />
+            <Route path="/testimonials" element={<TestimonialsPage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

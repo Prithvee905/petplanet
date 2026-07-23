@@ -23,7 +23,7 @@ export function DiagnosticsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmwquFLiAZ1pGq0rOC2dM-1i2nLj_6Z6isy-g9pH8nE49UKvUfZOCPJULpwU45Ztyxri9488IxDT7tvc2zdkavPraHZdw-Ww6wnv1Xu8uFwzCEToePsN_C_dbrxCyeVZhoJc98=s1600" alt="Petplanet Clinic Entrance" className="w-full h-full object-cover grayscale contrast-125" />
+              <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmwquFLiAZ1pGq0rOC2dM-1i2nLj_6Z6isy-g9pH8nE49UKvUfZOCPJULpwU45Ztyxri9488IxDT7tvc2zdkavPraHZdw-Ww6wnv1Xu8uFwzCEToePsN_C_dbrxCyeVZhoJc98=s1600" alt="Pet Planet Clinic Entrance" className="w-full h-full object-cover grayscale contrast-125" />
             </motion.div>
             <motion.div
               className="h-64 bg-gray-800 rounded-sm overflow-hidden mt-8"
@@ -43,7 +43,7 @@ export function DiagnosticsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">State-of-the-art <span className="text-orange">Diagnostics.</span></h2>
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Precision Clinical <span className="text-orange">Diagnostics.</span></h2>
             <p className="text-lg text-gray-400 mb-8 leading-relaxed">
               We believe in accurate, rapid diagnoses to provide the best possible care. Our clinic is equipped with modern, in-house diagnostic tools so you don't have to wait for answers when your pet needs help.
             </p>

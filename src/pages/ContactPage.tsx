@@ -5,8 +5,8 @@ export function ContactPage() {
   return (
     <>
       <Helmet>
-        <title>Contact & Location | Petplanet Clinic</title>
-        <meta name="description" content="Visit Petplanet Dog Clinic in Ramakrishnapuram, Hyderabad. Find our clinic timings, location map, and contact details." />
+        <title>Contact & Location | Pet Planet Dog Clinic</title>
+        <meta name="description" content="Visit Pet Planet Dog Clinic & Animal Diagnostics at Andal Homes in RK Puram, Kothapet, Hyderabad. View clinic operating hours, location map, and contact details." />
       </Helmet>
       
       <div className="pt-24 bg-gray-100">

@@ -30,8 +30,13 @@ export function LocationSection() {
                   <MapPin className="text-orange group-hover:text-white transition-colors" />
                 </div>
                 <div>
-                  <h4 className="font-display font-bold text-xl mb-1">Location</h4>
-                  <p className="text-gray-400">11-13-167, Swati Tower<br />Alkapuri Road Number 3, RK Puram<br />Saroornanagar, Kothapet<br />Hyderabad, Telangana 500102</p>
+                  <h4 className="font-display font-bold text-xl mb-1">Clinic Address</h4>
+                  <p className="text-gray-400 font-body leading-relaxed">
+                    11-13-167, Andal Homes<br />
+                    Alkapuri Road Number 3, RK Puram<br />
+                    Saroornagar, Kothapet<br />
+                    Hyderabad, Telangana 500102
+                  </p>
                 </div>
               </div>
 
@@ -40,8 +45,8 @@ export function LocationSection() {
                   <Clock className="text-orange group-hover:text-white transition-colors" />
                 </div>
                 <div>
-                  <h4 className="font-display font-bold text-xl mb-1">Clinic Timings</h4>
-                  <p className="text-gray-400">Mon - Sun: 8:00 AM - 9:00 PM</p>
+                  <h4 className="font-display font-bold text-xl mb-1">Clinical Operating Hours</h4>
+                  <p className="text-gray-400 font-body leading-relaxed">Monday - Sunday: 8:00 AM - 9:00 PM</p>
                 </div>
               </div>
 
