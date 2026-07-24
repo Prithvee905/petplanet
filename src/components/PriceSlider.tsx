@@ -76,7 +76,7 @@ export function PriceSlider() {
       <div className="bg-orange/10 border border-orange/20 rounded-lg p-4 flex items-start gap-3">
         <div className="text-orange mt-0.5">ⓘ</div>
         <p className="text-sm text-orange/80 leading-relaxed">
-          <strong>Estimated price</strong> — final cost confirmed at consultation. Prices may vary based on coat condition, temperament, and specific medical needs.
+          <strong>Estimated price</strong>: final cost confirmed at consultation. Prices may vary based on coat condition, temperament, and specific medical needs.
         </p>
       </div>
     </div>

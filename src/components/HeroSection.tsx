@@ -55,35 +55,35 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
           </motion.div>
 
           {/* Wrapper for Paragraph and Buttons positioned cleanly at bottom */}
-          <div className="mt-auto pt-16 sm:pt-20 lg:pt-8 pb-12 lg:pb-0">
+          <div className="mt-auto pt-24 sm:pt-28 lg:pt-8 pb-10 lg:pb-0">
             <motion.p
-              className="text-base sm:text-lg md:text-xl text-gray-200/90 font-body leading-relaxed tracking-normal mb-6 max-w-xl font-light drop-shadow-md"
+              className="text-sm sm:text-lg md:text-xl text-gray-200/90 font-body leading-relaxed tracking-normal mb-5 max-w-xl font-light drop-shadow-md"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              Advanced medical care, modern diagnostics, and personalized treatment for every stage of your pet's life—all under one roof in Ramakrishnapuram.
+              Advanced medical care, modern diagnostics, and personalized treatment for every stage of your pet's life, all under one roof in Ramakrishnapuram.
             </motion.p>
             <motion.div
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-row gap-3 sm:gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             >
               <button
                 onClick={onBookClick}
-                className="group relative flex items-center justify-center gap-2.5 bg-gradient-to-r from-orange to-amber-500 text-white px-6 py-3 rounded-full font-semibold text-sm sm:text-base shadow-md shadow-orange/30 hover:shadow-lg hover:shadow-orange/50 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 overflow-hidden"
+                className="flex-1 group relative flex items-center justify-center gap-1.5 sm:gap-2.5 bg-gradient-to-r from-orange to-amber-500 text-white px-3 sm:px-6 py-2.5 sm:py-3 rounded-full font-semibold text-xs sm:text-base shadow-md shadow-orange/30 hover:shadow-lg hover:shadow-orange/50 transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 overflow-hidden whitespace-nowrap"
               >
-                <Calendar size={18} className="group-hover:rotate-12 transition-transform duration-300" />
+                <Calendar size={16} className="group-hover:rotate-12 transition-transform duration-300 shrink-0" />
                 <span>Book Appointment</span>
                 <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </button>
               <a
                 href="#services"
-                className="group flex items-center justify-center gap-2.5 bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:border-white/40 text-white px-6 py-3 rounded-full font-semibold text-sm sm:text-base transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 shadow-md shadow-black/20"
+                className="flex-1 group flex items-center justify-center gap-1.5 sm:gap-2.5 bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:border-white/40 text-white px-3 sm:px-6 py-2.5 sm:py-3 rounded-full font-semibold text-xs sm:text-base transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 shadow-md shadow-black/20 whitespace-nowrap"
               >
                 <span>Our Services</span>
-                <ArrowRight size={18} className="group-hover:translate-x-1.5 transition-transform duration-300 text-orange" />
+                <ArrowRight size={16} className="group-hover:translate-x-1.5 transition-transform duration-300 text-orange shrink-0" />
               </a>
             </motion.div>
           </div>

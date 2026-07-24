@@ -28,7 +28,7 @@ export function AboutSection() {
               Conveniently located in the heart of Ramakrishnapuram, Kothapet, our modern facility is equipped with modern diagnostic and treatment capabilities, enabling us to provide healthcare tailored to each pet's individual needs.
             </p>
             <p className="text-lg text-gray-800 mb-4 font-body leading-relaxed">
-              Under the leadership of <strong className="font-semibold text-black">Dr. M. Kiran Kumar</strong> and a dedicated veterinary team, we offer a full spectrum of services—from preventive healthcare and routine wellness examinations to advanced diagnostics, surgery, emergency management, and long-term health support.
+              Under the leadership of <strong className="font-semibold text-black">Dr. M. Kiran Kumar</strong> and a dedicated veterinary team, we offer a full spectrum of services, from preventive healthcare and routine wellness examinations to advanced diagnostics, surgery, emergency management, and long-term health support.
             </p>
             <p className="text-lg text-gray-800 mb-6 font-body leading-relaxed">
               Every pet entrusted to us is treated with the same dedication and respect we would give our own.
