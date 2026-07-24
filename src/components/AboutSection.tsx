@@ -19,13 +19,19 @@ export function AboutSection() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 leading-tight">
-              A modern approach to <span className="text-orange">veterinary medical care.</span>
+              Advanced Veterinary Care Delivered with <span className="text-orange">Compassion.</span>
             </h2>
-            <p className="text-lg text-gray-800 mb-6 font-body leading-relaxed">
-              At Pet Planet Dog Clinic & Animal Diagnostics, we provide evidence-based veterinary care and advanced diagnostic evaluations. Our facility integrates cutting-edge diagnostic imaging with compassionate clinical protocols.
+            <p className="text-lg text-gray-800 mb-4 font-body leading-relaxed">
+              At Pet Planet Dog Clinic & Animal Diagnostics, we believe every pet deserves exceptional healthcare delivered with compassion, expertise, and integrity.
             </p>
-            <p className="text-lg text-gray-800 font-body leading-relaxed">
-              From prophylactic wellness exams to complex soft-tissue surgeries, Dr. M. Kiran Kumar (20+ years veterinary medical experience), Dr. Meghana, and our clinical team are dedicated to maintaining the health and longevity of your small animal companions.
+            <p className="text-lg text-gray-800 mb-4 font-body leading-relaxed">
+              Conveniently located in the heart of Ramakrishnapuram, Kothapet, our modern facility is equipped with modern diagnostic and treatment capabilities, enabling us to provide healthcare tailored to each pet's individual needs.
+            </p>
+            <p className="text-lg text-gray-800 mb-4 font-body leading-relaxed">
+              Under the leadership of <strong className="font-semibold text-black">Dr. M. Kiran Kumar</strong> and a dedicated veterinary team, we offer a full spectrum of services—from preventive healthcare and routine wellness examinations to advanced diagnostics, surgery, emergency management, and long-term health support.
+            </p>
+            <p className="text-lg text-gray-800 mb-6 font-body leading-relaxed">
+              Every pet entrusted to us is treated with the same dedication and respect we would give our own.
             </p>
           </motion.div>
 

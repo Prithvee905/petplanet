@@ -16,18 +16,16 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
-        {/* Left-side fade into hero text */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent z-10 pointer-events-none" />
-        {/* Bottom fade */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10 pointer-events-none" />
-        {/* Top fade */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-transparent z-10 pointer-events-none" />
+        {/* Soft left-side fade so dog blends into hero text — kept very light */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/20 to-transparent z-10 pointer-events-none" />
+        {/* Subtle bottom fade */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10 pointer-events-none" />
 
-        {/* Dog image — face + neck, fills right column, cropped at bottom */}
+        {/* Dog image — face + neck, fills right column */}
         <img
           src="/hero-dog.png"
           alt="Pet Planet Husky Dog Patient"
-          className="absolute inset-0 w-full h-full object-cover object-top opacity-100"
+          className="absolute inset-0 w-full h-full object-cover opacity-100"
           style={{ objectPosition: 'center 42%' }}
         />
       </motion.div>
@@ -41,15 +39,16 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
       <Doodle type="sparkle" className="top-24 right-[55%] w-10 h-10 z-20 text-orange/40" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-30 w-full">
-        <div className="max-w-2xl flex flex-col min-h-[calc(100vh-140px)] lg:min-h-0">
+        <div className="max-w-3xl flex flex-col min-h-[calc(100vh-140px)] lg:min-h-0">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold text-white mb-4 sm:mb-6 leading-[1.1] tracking-tight">
-              Advanced care for your <span className="text-orange relative inline-block">
-                best friend.
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-display font-bold text-white mb-4 sm:mb-6 leading-[1.15] tracking-tight">
+              Where compassion meets <br className="hidden sm:inline" />
+              <span className="text-orange relative inline-block mt-1 sm:mt-0">
+                clinical excellence.
                 <Doodle type="arrow" className="-bottom-8 right-0 w-12 h-12 -rotate-12 absolute text-orange/80" />
               </span>
             </h1>
@@ -58,12 +57,12 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
           {/* Wrapper for Paragraph and Buttons positioned cleanly at bottom */}
           <div className="mt-auto pt-16 sm:pt-20 lg:pt-8 pb-12 lg:pb-0">
             <motion.p
-              className="text-base sm:text-lg md:text-xl text-gray-200/90 font-body leading-relaxed tracking-normal mb-6 max-w-lg font-light drop-shadow-md"
+              className="text-base sm:text-lg md:text-xl text-gray-200/90 font-body leading-relaxed tracking-normal mb-6 max-w-xl font-light drop-shadow-md"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              A premier, fully-equipped veterinary facility providing comprehensive clinical care, major & minor surgeries, and advanced animal diagnostics.
+              Advanced medical care, modern diagnostics, and personalized treatment for every stage of your pet's life—all under one roof in Ramakrishnapuram.
             </motion.p>
             <motion.div
               className="flex flex-col sm:flex-row gap-4"

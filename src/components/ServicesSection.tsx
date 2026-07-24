@@ -5,7 +5,7 @@ import { Doodle } from './Doodle';
 const services = [
   {
     icon: Stethoscope,
-    title: 'Preventive Care & Routine Check-ups',
+    title: 'Preventive Healthcare & Routine Check-ups',
     description: 'Comprehensive prophylactic wellness examinations, vital sign evaluations, and early health screening for small animals.',
   },
   {
@@ -14,14 +14,14 @@ const services = [
     description: 'Core and lifestyle immunization protocols tailored for your pet. We send automated reminder notifications for your pet’s next scheduled vaccination date so they stay fully protected.',
   },
   {
-    icon: Video,
-    title: 'Online Consultation',
-    description: 'Virtual tele-triage and remote veterinary medical consultations, providing expert diagnostic advice and guidance from the comfort of home.',
+    icon: ClipboardPlus,
+    title: 'OPD / Outpatient Consultations',
+    description: 'Convenient outpatient medical consultations and ongoing therapeutic management for acute and chronic conditions.',
   },
   {
-    icon: Activity,
-    title: 'Veterinary Major & Minor Surgeries',
-    description: 'Specialized soft-tissue surgical interventions ranging from routine minor procedures to complex major surgeries (including tumor excision) conducted under aseptic protocols.',
+    icon: Video,
+    title: 'Teleconsultation',
+    description: 'Convenient online consultation for follow-up care, general guidance, advice, and follow-up care when an in-person visit may not be necessary.',
   },
   {
     icon: Microscope,
@@ -29,29 +29,29 @@ const services = [
     description: 'In-house diagnostic laboratory equipment, digital radiography (X-ray), and ultrasonography for immediate, accurate diagnostic evaluation.',
   },
   {
+    icon: Activity,
+    title: 'Medical & Surgical Care',
+    description: 'Comprehensive medical management and advanced surgical services, including soft tissue, orthopaedic, elective, and exploratory procedures, delivered with safe anaesthesia and dedicated post-operative care.',
+  },
+  {
     icon: HeartPulse,
-    title: 'Dental Treatments & Oral Care',
+    title: 'Dental & Oral Care',
     description: 'Professional ultrasonic scaling, oral prophylaxis, and comprehensive dental health treatments to prevent periodontal disease.',
   },
   {
-    icon: Pill,
-    title: 'Pet Store',
-    description: 'Fully equipped on-site store stocking prescription veterinary pharmaceuticals, specialized clinical nutrition/food, wellness supplements, and premium pet accessories.',
+    icon: Scissors,
+    title: 'Pet Grooming',
+    description: 'Professional hygienic grooming, coat styling, medicated baths, and ear/nail care for overall skin and coat health.',
   },
   {
-    icon: Scissors,
-    title: 'Pet Grooming & Hygiene',
-    description: 'Professional hygienic grooming, coat styling, medicated baths, and ear/nail care for overall skin and coat health.',
+    icon: Pill,
+    title: 'Pharmacy & Pet Care Store',
+    description: 'Fully equipped on-site store stocking prescription veterinary pharmaceuticals, specialized clinical nutrition, wellness supplements, and everyday essentials for your pet.',
   },
   {
     icon: AlertCircle,
     title: 'Emergency Medical Services',
     description: 'Immediate medical triage and urgent critical care protocols for trauma, acute illness, and severe systemic emergencies.',
-  },
-  {
-    icon: ClipboardPlus,
-    title: 'OPD / Outpatient Consultations',
-    description: 'Convenient outpatient medical consultations and ongoing therapeutic management for acute and chronic conditions.',
   },
 ];
 
