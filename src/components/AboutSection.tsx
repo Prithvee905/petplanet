@@ -22,7 +22,7 @@ export function AboutSection() {
               Advanced Veterinary Care Delivered with <span className="text-orange">Compassion.</span>
             </h2>
             <p className="text-lg text-gray-800 mb-4 font-body leading-relaxed">
-              At Pet Planet Dog Clinic & Animal Diagnostics, we believe every pet deserves exceptional healthcare delivered with compassion, expertise, and integrity.
+              At <strong className="font-bold text-black">Pet Planet Dog Clinic & Animal Diagnostics</strong>, we believe every pet deserves exceptional healthcare delivered with compassion, expertise, and integrity.
             </p>
             <p className="text-lg text-gray-800 mb-4 font-body leading-relaxed">
               Conveniently located in the heart of Ramakrishnapuram, Kothapet, our modern facility is equipped with modern diagnostic and treatment capabilities, enabling us to provide healthcare tailored to each pet's individual needs.

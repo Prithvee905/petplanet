@@ -16,17 +16,17 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
-        {/* Soft left-side fade so dog blends into hero text — kept very light */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/20 to-transparent z-10 pointer-events-none" />
+        {/* Mobile & Laptop Gradients: Soft dark gradient for readability, ultra-clean right side for dog face */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/60 to-black/90 lg:bg-gradient-to-r lg:from-black lg:via-black/10 lg:to-transparent z-10 pointer-events-none" />
         {/* Subtle bottom fade */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10 pointer-events-none" />
 
-        {/* Dog image — face + neck, fills right column */}
+        {/* Dog image — face + neck, crystal clear focal point on the eyes & face */}
         <img
           src="/hero-dog.png"
           alt="Pet Planet Husky Dog Patient"
-          className="absolute inset-0 w-full h-full object-cover opacity-100"
-          style={{ objectPosition: 'center 42%' }}
+          className="absolute inset-0 w-full h-full object-cover opacity-95 lg:opacity-100"
+          style={{ objectPosition: 'center 28%' }}
         />
       </motion.div>
 
@@ -39,16 +39,16 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
       <Doodle type="sparkle" className="top-24 right-[55%] w-10 h-10 z-20 text-orange/40" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-30 w-full">
-        <div className="max-w-3xl flex flex-col min-h-[calc(100vh-140px)] lg:min-h-0">
+        <div className="max-w-2xl flex flex-col min-h-[calc(100vh-140px)] lg:min-h-0">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-display font-bold text-white mb-4 sm:mb-6 leading-[1.15] tracking-tight">
-              Where compassion meets <br className="hidden sm:inline" />
-              <span className="text-orange relative inline-block mt-1 sm:mt-0">
-                clinical excellence.
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-display font-bold text-white mb-4 sm:mb-6 leading-[1.2] tracking-tight">
+              Where Compassion <br />
+              Meets <span className="text-orange relative inline-block mt-1">
+                Clinical Excellence.
                 <Doodle type="arrow" className="-bottom-8 right-0 w-12 h-12 -rotate-12 absolute text-orange/80" />
               </span>
             </h1>

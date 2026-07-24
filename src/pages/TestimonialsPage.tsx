@@ -74,7 +74,7 @@ export function TestimonialsPage() {
               Client <span className="text-orange">Testimonials .</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-body leading-relaxed">
-              Discover why thousands of pet parents across Hyderabad trust Pet Planet with the health and happiness of their pets.
+              Discover why thousands of pet parents across Hyderabad trust <strong className="font-bold text-white">Pet Planet</strong> with the health and happiness of their pets.
             </p>
           </motion.div>
         </div>
