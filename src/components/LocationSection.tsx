@@ -46,7 +46,7 @@ export function LocationSection() {
                 </div>
                 <div>
                   <h4 className="font-display font-bold text-xl mb-1">Clinical Operating Hours</h4>
-                  <p className="text-gray-400 font-body leading-relaxed">Monday - Sunday: 8:00 AM - 9:00 PM</p>
+                  <p className="text-gray-400 font-body leading-relaxed">Open 365 Days: 9:00 AM - 9:00 PM</p>
                 </div>
               </div>
 

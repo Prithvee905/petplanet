@@ -4,7 +4,7 @@ import { Doodle } from './Doodle';
 const doctors = [
   {
     name: 'Dr. Kiran Kumar',
-    specialty: 'Veterinary Physician',
+    specialty: 'Founder & Chief Veterinarian',
     bio: 'With over 20 years of hands-on experience, Dr. Kiran is a highly experienced small-animal veterinarian. He expertly handles both routine preventive care and complex surgical cases, including tumor removals, all while maintaining a calm, trusted bedside manner that puts pets and parents at ease.',
     image: 'https://images.unsplash.com/photo-1612349317150-e410f624c427?q=80&w=2070&auto=format&fit=crop',
   },

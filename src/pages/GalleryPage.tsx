@@ -87,24 +87,12 @@ export function GalleryPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="relative h-64 overflow-hidden bg-gray-200">
+                <div className="relative h-80 sm:h-96 overflow-hidden bg-gray-200">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute top-4 left-4 bg-black/70 backdrop-blur-md text-white text-xs px-3 py-1.5 rounded-full border border-white/20 font-medium">
-                    {item.category}
-                  </div>
-                </div>
-
-                <div className="p-6">
-                  <h3 className="text-xl font-display font-bold mb-2 group-hover:text-orange transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed font-body">
-                    {item.caption}
-                  </p>
                 </div>
               </motion.div>
             ))}

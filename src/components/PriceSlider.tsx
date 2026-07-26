@@ -37,7 +37,7 @@ export function PriceSlider() {
             {weight}{weight === 40 ? '+' : ''} kg
           </span>
         </div>
-        
+
         <input
           id="weight-slider"
           type="range"

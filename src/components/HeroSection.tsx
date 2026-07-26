@@ -117,7 +117,7 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
             { icon: '⭐', text: '4.7 ★ Rating (1,800+ Verified Clients)' },
             { icon: '🐾', text: '17+ Years Clinic Excellence' },
             { icon: '🩺', text: '20+ Years Vet Surgical Expertise' },
-            { icon: '⏰', text: 'Open 7 Days: 8:00 AM - 9:00 PM' },
+            { icon: '⏰', text: 'Open 365 Days: 9:00 AM - 9:00 PM' },
           ].map((item, idx) => (
             <div key={`a-${idx}`} className="flex items-center gap-3 text-xs sm:text-sm text-gray-200 shrink-0 px-6">
               <span className="text-base">{item.icon}</span>
@@ -131,7 +131,7 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
             { icon: '⭐', text: '4.7 ★ Rating (1,800+ Verified Clients)' },
             { icon: '🐾', text: '17+ Years Clinic Excellence' },
             { icon: '🩺', text: '20+ Years Vet Surgical Expertise' },
-            { icon: '⏰', text: 'Open 7 Days: 8:00 AM - 9:00 PM' },
+            { icon: '⏰', text: 'Open 365 Days: 9:00 AM - 9:00 PM' },
           ].map((item, idx) => (
             <div key={`b-${idx}`} className="flex items-center gap-3 text-xs sm:text-sm text-gray-200 shrink-0 px-6">
               <span className="text-base">{item.icon}</span>
