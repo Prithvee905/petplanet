@@ -2,7 +2,7 @@ import type { SVGProps } from 'react';
 import { cn } from '../lib/utils';
 import { PawPrint, Dog } from 'lucide-react';
 
-export type DoodleType = 'paw' | 'bone' | 'swirl' | 'arrow' | 'sparkle' | 'dog';
+export type DoodleType = 'paw' | 'bone' | 'swirl' | 'arrow' | 'sparkle' | 'dog' | 'logo';
 
 interface DoodleProps extends SVGProps<SVGSVGElement> {
   type: DoodleType;
@@ -14,6 +14,16 @@ export function Doodle({ type, className, ...props }: DoodleProps) {
   const baseClasses = "absolute pointer-events-none opacity-50 text-orange";
 
   switch (type) {
+    case 'logo':
+      return (
+        <img
+          src="/logo-transparent.png"
+          alt=""
+          aria-hidden="true"
+          className={cn('absolute pointer-events-none select-none', className)}
+          style={{ opacity: 0.07 }}
+        />
+      );
     case 'dog':
       return (
         <Dog className={cn(baseClasses, className)} {...(props as any)} />

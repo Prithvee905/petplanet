@@ -10,6 +10,8 @@ export function AboutSection() {
       <Doodle type="paw" className="bottom-12 left-[12%] w-24 h-24 rotate-[25deg] text-orange/25" />
       <Doodle type="sparkle" className="top-1/2 left-[5%] w-10 h-10 text-orange/30" />
       <Doodle type="swirl" className="bottom-6 right-[5%] w-28 h-28 rotate-12 text-orange/20" />
+      {/* Logo watermark doodle */}
+      <Doodle type="logo" className="-bottom-10 -right-20 w-[480px] h-auto rotate-[-12deg] z-0" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -19,19 +21,19 @@ export function AboutSection() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 leading-tight">
-              Advanced Veterinary Care Delivered with <span className="text-orange">Compassion.</span>
+              About <span className="text-orange">Pet Planet.</span>
             </h2>
             <p className="text-lg text-gray-800 mb-4 font-body leading-relaxed">
-              At <strong className="font-bold text-black">Pet Planet Dog Clinic & Animal Diagnostics</strong>, we believe every pet deserves exceptional healthcare delivered with compassion, expertise, and integrity.
+              Founded over 16 years ago, <strong className="font-bold text-black">Pet Planet</strong> began as a small veterinary clinic with a simple vision—to provide genuine, compassionate care for every pet. What started as a modest practice has now grown into a trusted destination for pet healthcare.
             </p>
             <p className="text-lg text-gray-800 mb-4 font-body leading-relaxed">
-              Conveniently located in the heart of Ramakrishnapuram, Kothapet, our modern facility is equipped with modern diagnostic and treatment capabilities, enabling us to provide healthcare tailored to each pet's individual needs.
+              Over the years, we have continually expanded our services to meet the evolving needs of pets and their families. Today, <strong className="font-bold text-black">Pet Planet</strong> offers a wide range of services—all under one roof.
             </p>
             <p className="text-lg text-gray-800 mb-4 font-body leading-relaxed">
-              Under the leadership of <strong className="font-semibold text-black">Dr. M. Kiran Kumar</strong> and a dedicated veterinary team, we offer a full spectrum of services, from preventive healthcare and routine wellness examinations to advanced diagnostics, surgery, emergency management, and long-term health support.
+              Every patient we care for and every family we serve has been a part of our journey. Their trust and confidence have been the foundation of our growth and continue to inspire us to raise the standards of veterinary care.
             </p>
             <p className="text-lg text-gray-800 mb-6 font-body leading-relaxed">
-              Every pet entrusted to us is treated with the same dedication and respect we would give our own.
+              As we look to the future, we remain dedicated to creating a world where every pet receives the care, attention, and love they truly deserve.
             </p>
           </motion.div>
 

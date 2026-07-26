@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 import { HeroSection } from '../components/HeroSection';
 import { AboutSection } from '../components/AboutSection';
+import { DrKiranSection } from '../components/DrKiranSection';
 import { TestimonialsSection } from '../components/TestimonialsSection';
 import { CtaBanner } from '../components/CtaBanner';
 
@@ -18,6 +19,7 @@ export function Home({ onBookClick }: HomeProps) {
       
       <HeroSection onBookClick={onBookClick} />
       <AboutSection />
+      <DrKiranSection />
       <TestimonialsSection />
       <CtaBanner onBookClick={onBookClick} />
     </>
