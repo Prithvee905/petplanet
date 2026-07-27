@@ -94,14 +94,14 @@ export function Navbar({ onBookClick }: NavbarProps) {
         animate={{ opacity: isMobileMenuOpen ? 1 : 0, x: isMobileMenuOpen ? 0 : '100%' }}
         transition={{ duration: 0.3 }}
       >
-        <div className="flex flex-col items-center justify-center h-full space-y-8">
+        <div className="flex flex-col items-center justify-center h-full space-y-6">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
               className={cn(
-                "text-3xl font-display hover:text-orange transition-colors",
+                "text-2xl font-display hover:text-orange transition-colors",
                 location.pathname === link.href ? 'text-orange' : 'text-white'
               )}
             >

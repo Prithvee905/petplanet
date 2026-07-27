@@ -89,8 +89,8 @@ export function DrKiranSection() {
             {/* Highlights */}
             <div className="grid grid-cols-3 gap-4 mt-10">
               {[
-                { number: '2008', label: 'Est. Year' },
-                { number: '20+', label: 'Years Experience' },
+                { number: '2009', label: 'Est. Year' },
+                { number: '17+', label: 'Years Experience' },
                 { number: '1800+', label: 'Pet Families' },
               ].map((s, i) => (
                 <motion.div

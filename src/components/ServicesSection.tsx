@@ -103,8 +103,8 @@ export function ServicesSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
             >
-              {/* Card Image Header - Increased height for photo clarity */}
-              <div className="relative h-72 sm:h-80 w-full overflow-hidden bg-gray-200">
+              {/* Card Image Header - Responsive height for better mobile viewing */}
+              <div className="relative h-48 sm:h-64 lg:h-80 w-full overflow-hidden bg-gray-200">
                 <img
                   src={service.image}
                   alt={service.title}

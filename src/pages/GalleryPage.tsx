@@ -87,7 +87,7 @@ export function GalleryPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="relative h-80 sm:h-96 overflow-hidden bg-gray-200">
+                <div className="relative h-56 sm:h-72 md:h-80 overflow-hidden bg-gray-200">
                   <img
                     src={item.image}
                     alt={item.title}

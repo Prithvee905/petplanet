@@ -50,14 +50,14 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial, i) => (
             <motion.div
               key={i}
-              className="bg-gray-100 p-8 rounded-sm relative"
+              className="bg-gray-100 p-6 md:p-8 rounded-sm relative"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.2 }}
             >
               <div className="text-orange text-6xl font-display leading-none absolute -top-4 left-6 opacity-20">"</div>
-              <p className="text-gray-800 mb-8 relative z-10 font-body leading-relaxed text-lg">
+              <p className="text-gray-800 mb-6 md:mb-8 relative z-10 font-body leading-relaxed text-base md:text-lg">
                 {testimonial.text}
               </p>
               <div>

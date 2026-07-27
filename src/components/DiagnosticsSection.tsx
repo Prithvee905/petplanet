@@ -15,7 +15,7 @@ export function DiagnosticsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
-          <div className="order-2 lg:order-1 grid grid-cols-1 gap-4">
+          <div className="order-1 lg:order-1 grid grid-cols-1 gap-4">
             <motion.div
               className="flex justify-center"
               initial={{ opacity: 0, scale: 0.9 }}
@@ -28,14 +28,14 @@ export function DiagnosticsSection() {
           </div>
 
           <motion.div
-            className="order-1 lg:order-2"
+            className="order-2 lg:order-2"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">Precision Clinical <span className="text-orange">Diagnostics.</span></h2>
-            <p className="text-lg text-gray-400 mb-8 leading-relaxed">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">Precision Clinical <span className="text-orange">Diagnostics.</span></h2>
+            <p className="text-lg lg:text-xl text-gray-400 mb-8 leading-relaxed">
               We believe in accurate, rapid diagnoses to provide the best possible care. Our clinic is equipped with modern, in-house diagnostic tools so you don't have to wait for answers when your pet needs help.
             </p>
             <ul className="space-y-4">
@@ -47,7 +47,7 @@ export function DiagnosticsSection() {
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-orange rounded-full" />
-                  <span className="text-gray-300 font-medium">{item}</span>
+                  <span className="text-gray-300 font-medium lg:text-lg">{item}</span>
                 </li>
               ))}
             </ul>
