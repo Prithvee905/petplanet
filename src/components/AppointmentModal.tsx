@@ -36,6 +36,36 @@ export function AppointmentModal({ isOpen, onClose }: AppointmentModalProps) {
 
       if (submitError) throw submitError;
       
+      // Send Email via Web3Forms
+      const web3FormsKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+      if (web3FormsKey) {
+        await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            access_key: web3FormsKey,
+            subject: 'New Appointment Booking - Pet Planet',
+            from_name: 'Pet Planet Website',
+            message: `
+New Appointment Request:
+
+Name: ${data.name}
+Phone: ${data.phone}
+Pet Name: ${data.pet_name}
+Pet Type: ${data.pet_type}
+Preferred Date: ${data.preferred_date}
+Preferred Time: ${data.preferred_time}
+
+Message: 
+${data.message}
+            `
+          })
+        });
+      }
+
       setSuccess(true);
       setTimeout(() => {
         onClose();

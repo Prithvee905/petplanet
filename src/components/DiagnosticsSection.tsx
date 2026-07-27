@@ -23,7 +23,7 @@ export function DiagnosticsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <img src="/diagnostics-2.jpg" alt="Diagnostics Services" className="max-h-[700px] w-auto object-contain drop-shadow-2xl" />
+              <img src="/diagnostics-2.jpg" alt="Diagnostics Services" className="max-h-[900px] w-auto object-contain drop-shadow-2xl" />
             </motion.div>
           </div>
 
