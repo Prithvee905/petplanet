@@ -17,22 +17,22 @@ export function DiagnosticsSection() {
           
           <div className="order-2 lg:order-1 grid grid-cols-2 gap-4">
             <motion.div
-              className="h-64 bg-gray-800 rounded-sm overflow-hidden"
+              className="rounded-xl overflow-hidden bg-white/5 p-2 border border-white/10"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmwquFLiAZ1pGq0rOC2dM-1i2nLj_6Z6isy-g9pH8nE49UKvUfZOCPJULpwU45Ztyxri9488IxDT7tvc2zdkavPraHZdw-Ww6wnv1Xu8uFwzCEToePsN_C_dbrxCyeVZhoJc98=s1600" alt="Pet Planet Clinic Entrance" className="w-full h-full object-cover grayscale contrast-125" />
+              <img src="/diagnostics-1.jpg" alt="Pet X-RAY" className="w-full h-auto object-contain rounded-lg" />
             </motion.div>
             <motion.div
-              className="h-64 bg-gray-800 rounded-sm overflow-hidden mt-8"
+              className="rounded-xl overflow-hidden bg-white/5 p-2 border border-white/10"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <img src="https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmff23IfLnRGqNQbWlJGwgp3y5UX1EbLWHuWlrI1U2y64Em0lVnqNWijhLlcp4uSXVEneL0PQ0L7nJzHRn9YjJ0Q3_9b0hsKUS2SDhjB0-jHRrCp3UHZ3W4FtF77Xu2HdzaO8Y3=s1600" alt="Clinic IV and Treatment Area" className="w-full h-full object-cover grayscale contrast-125" />
+              <img src="/diagnostics-2.jpg" alt="Diagnostics Services" className="w-full h-auto object-contain rounded-lg" />
             </motion.div>
           </div>
 

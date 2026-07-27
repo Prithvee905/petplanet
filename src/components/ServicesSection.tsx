@@ -7,7 +7,8 @@ const services = [
     icon: Stethoscope,
     title: 'Preventive Healthcare & Routine Check-ups',
     description: 'Comprehensive prophylactic wellness examinations, vital sign evaluations, and early health screening for small animals.',
-    image: 'https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?q=80&w=800&auto=format&fit=crop',
+    image: '/pet-healthcare.jpg',
+    imagePosition: 'object-left',
   },
   {
     icon: Syringe,
@@ -107,7 +108,7 @@ export function ServicesSection() {
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ${service.imagePosition || 'object-center'}`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
                 <div className="absolute bottom-4 left-4 w-12 h-12 bg-orange text-white rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">
