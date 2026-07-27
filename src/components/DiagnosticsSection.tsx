@@ -15,16 +15,7 @@ export function DiagnosticsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
-          <div className="order-2 lg:order-1 grid grid-cols-2 gap-4">
-            <motion.div
-              className="rounded-xl overflow-hidden bg-white/5 p-2 border border-white/10"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <img src="/diagnostics-1.jpg" alt="Pet X-RAY" className="w-full h-auto object-contain rounded-lg" />
-            </motion.div>
+          <div className="order-2 lg:order-1 grid grid-cols-1 gap-4">
             <motion.div
               className="rounded-xl overflow-hidden bg-white/5 p-2 border border-white/10"
               initial={{ opacity: 0, scale: 0.9 }}
