@@ -13,7 +13,7 @@ export function DiagnosticsSection() {
       <Doodle type="swirl" className="absolute bottom-12 left-5 w-24 h-24 rotate-[60deg] z-10 text-white/5" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-2 gap-4 md:gap-12 lg:gap-16 items-center">
           
           <div className="order-1 lg:order-1 grid grid-cols-1 gap-4">
             <motion.div
@@ -23,7 +23,7 @@ export function DiagnosticsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <img src="/diagnostics-2.jpg" alt="Diagnostics Services" className="max-h-[900px] w-auto object-contain drop-shadow-2xl" />
+              <img src="/diagnostics-2.jpg" alt="Diagnostics Services" className="max-h-[320px] sm:max-h-[550px] lg:max-h-[900px] w-auto object-contain drop-shadow-2xl" />
             </motion.div>
           </div>
 
@@ -34,20 +34,20 @@ export function DiagnosticsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">Precision Clinical <span className="text-orange">Diagnostics.</span></h2>
-            <p className="text-lg lg:text-xl text-gray-400 mb-8 leading-relaxed">
+            <h2 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-display font-bold mb-3 md:mb-6">Precision Clinical <span className="text-orange">Diagnostics.</span></h2>
+            <p className="text-xs sm:text-base lg:text-xl text-gray-400 mb-4 md:mb-8 leading-relaxed">
               We believe in accurate, rapid diagnoses to provide the best possible care. Our clinic is equipped with modern, in-house diagnostic tools so you don't have to wait for answers when your pet needs help.
             </p>
-            <ul className="space-y-4">
+            <ul className="space-y-2 md:space-y-4">
               {[
                 'Digital X-Ray Imaging',
                 'Advanced Ultrasound',
                 'In-house Blood Analyzers',
                 'Microscopic Examinations'
               ].map((item, i) => (
-                <li key={i} className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-orange rounded-full" />
-                  <span className="text-gray-300 font-medium lg:text-lg">{item}</span>
+                <li key={i} className="flex items-center gap-2 md:gap-3">
+                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-orange rounded-full flex-shrink-0" />
+                  <span className="text-xs sm:text-base lg:text-lg text-gray-300 font-medium">{item}</span>
                 </li>
               ))}
             </ul>
