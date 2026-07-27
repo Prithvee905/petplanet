@@ -17,13 +17,13 @@ export function DiagnosticsSection() {
           
           <div className="order-2 lg:order-1 grid grid-cols-1 gap-4">
             <motion.div
-              className="rounded-xl overflow-hidden bg-white/5 p-2 border border-white/10"
+              className="flex justify-center"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <img src="/diagnostics-2.jpg" alt="Diagnostics Services" className="w-full h-auto object-contain rounded-lg" />
+              <img src="/diagnostics-2.jpg" alt="Diagnostics Services" className="max-h-[700px] w-auto object-contain drop-shadow-2xl" />
             </motion.div>
           </div>
 

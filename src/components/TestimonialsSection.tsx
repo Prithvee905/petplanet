@@ -17,6 +17,21 @@ const testimonials = [
     pet: 'Rescued Dog',
     text: 'My dog had severe diarrhea and recovered so quickly under Dr. Kiran’s expert treatment. The entire staff is incredibly friendly, professional, and they take the time to explain every detail of the treatment.',
   },
+  {
+    name: 'Ravi Teja',
+    pet: 'Golden Retriever',
+    text: 'Dr. Kiran is a lifesaver. My dog was in critical condition and needed immediate IV fluid treatment. The doctor acted swiftly and saved his life. I highly recommend Pet Planet for any emergency.',
+  },
+  {
+    name: 'Priya Sharma',
+    pet: 'Shih Tzu',
+    text: 'Not only is the medical care top-notch, but their grooming services are also fantastic. My Shih Tzu always comes back looking beautiful and smelling fresh. They handle pets with so much love and care.',
+  },
+  {
+    name: 'Anand Kumar',
+    pet: 'Indie Dog',
+    text: 'We have been visiting Dr. Kiran for over 5 years now. His accurate diagnosis and genuine affection for animals make him the best vet in the area. The clinic is open 365 days which is a huge relief.',
+  },
 ];
 
 export function TestimonialsSection() {
