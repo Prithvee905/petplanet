@@ -3,34 +3,47 @@ import { Doodle } from './Doodle';
 
 const testimonials = [
   {
-    name: 'Pet Parent',
-    pet: 'Labrador',
-    text: 'Dr. Kiran successfully treated my Labrador’s tumor through surgery. His two decades of experience really shone through, and his calm manner put us completely at ease during a stressful time.',
+    name: 'Prabhu Paul',
+    pet: 'Puppy (Parvovirus Survivor)',
+    image: '/parvo-puppy.jpg',
+    text: 'Our puppy had severe bloody diarrhea, vomiting & lost weight rapidly. Dr. Kiran diagnosed Parvovirus. After a week of dedicated treatment and care, she is fully healthy & active!',
   },
   {
-    name: 'Clinic Client',
-    pet: 'Dog Owner',
-    text: 'The facility is incredibly clean, modern, and well-organized. You can tell they have top-tier clinical equipment, which instantly made me feel confident that my pet was in the best hands.',
+    name: 'Sai Theja',
+    pet: 'Magnus (Beagle)',
+    image: '/magnus.jpg',
+    text: 'Our Beagle Magnus got tick fever with low platelets & blood infection. They treated him with so much love, care & a successful blood transfusion. He recovered in a week and is super healthy now!',
   },
   {
-    name: 'Pet Parent',
-    pet: 'Rescued Dog',
-    text: 'My dog had severe diarrhea and recovered so quickly under Dr. Kiran’s expert treatment. The entire staff is incredibly friendly, professional, and they take the time to explain every detail of the treatment.',
+    name: 'Joyjeet Kanungo',
+    pet: 'Neroli (German Shepherd)',
+    image: '/neroli.jpg',
+    text: 'This is the favourite place to go for my furry friend, Neroli. She loves all the pampering she gets. I got her spayed earlier this year and received the most professional, loving and caring service ❤️',
+  },
+  {
+    name: 'Gaurav Kumar',
+    pet: 'Pet Parent (6 Years)',
+    text: 'I’ve been taking my pet to Pet Planet for 6 years. Dr. Kiran performed two eye surgeries on my pet with exceptional care for a complete recovery. Highly recommend Dr. Kiran and the team!',
+  },
+  {
+    name: 'Srinivas Naidu',
+    pet: 'Bruno (Golden Retriever)',
+    text: 'We took Bruno with 106° fever & 65K platelets. Dr. Kiran treated him professionally and brought him back to normal within 5 days. Highly satisfied and felt our dog was in safe hands.',
+  },
+  {
+    name: 'Joyjeet Kanungo',
+    pet: 'Neroli (Pet Parent)',
+    text: 'Favorite place for my furry friend, Neroli. I got her spayed earlier this year and received the most professional, loving and caring service. Neroli sends boops to all the PetPlanet team ❤️',
+  },
+  {
+    name: 'Pallavi M.',
+    pet: 'Emergency Pet Visit',
+    text: 'We visit them over nearby clinics solely because of how compassionate they are. They once even waited 30 mins after closing time when we had an emergency. A trustworthy clinic!',
   },
   {
     name: 'Ravi Teja',
     pet: 'Golden Retriever',
     text: 'Dr. Kiran is a lifesaver. My dog was in critical condition and needed immediate IV fluid treatment. The doctor acted swiftly and saved his life. I highly recommend Pet Planet for any emergency.',
-  },
-  {
-    name: 'Priya Sharma',
-    pet: 'Shih Tzu',
-    text: 'Not only is the medical care top-notch, but their grooming services are also fantastic. My Shih Tzu always comes back looking beautiful and smelling fresh. They handle pets with so much love and care.',
-  },
-  {
-    name: 'Anand Kumar',
-    pet: 'Indie Dog',
-    text: 'We have been visiting Dr. Kiran for over 5 years now. His accurate diagnosis and genuine affection for animals make him the best vet in the area. The clinic is open 365 days which is a huge relief.',
   },
 ];
 
@@ -50,19 +63,30 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial, i) => (
             <motion.div
               key={i}
-              className="bg-gray-100 p-6 md:p-8 rounded-sm relative"
+              className="bg-gray-100 p-6 md:p-8 rounded-2xl relative flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.2 }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
             >
-              <div className="text-orange text-6xl font-display leading-none absolute -top-4 left-6 opacity-20">"</div>
-              <p className="text-gray-800 mb-6 md:mb-8 relative z-10 font-body leading-relaxed text-base md:text-lg">
-                {testimonial.text}
-              </p>
               <div>
-                <h4 className="font-display font-bold text-xl">{testimonial.name}</h4>
-                <p className="text-gray-500 text-sm">{testimonial.pet}</p>
+                <div className="text-orange text-6xl font-display leading-none absolute -top-4 left-6 opacity-20">"</div>
+                <p className="text-gray-800 mb-6 md:mb-8 relative z-10 font-body leading-relaxed text-base md:text-lg">
+                  {testimonial.text}
+                </p>
+              </div>
+              <div className="flex items-center gap-3 pt-4 border-t border-gray-200/60">
+                {testimonial.image ? (
+                  <img src={testimonial.image} alt={testimonial.pet} className="w-12 h-12 rounded-full object-cover border-2 border-orange/60 shadow-sm" />
+                ) : (
+                  <div className="w-10 h-10 bg-orange/10 text-orange rounded-full flex items-center justify-center font-bold font-display">
+                    {testimonial.name.charAt(0)}
+                  </div>
+                )}
+                <div>
+                  <h4 className="font-display font-bold text-xl">{testimonial.name}</h4>
+                  <p className="text-gray-500 text-sm">{testimonial.pet}</p>
+                </div>
               </div>
             </motion.div>
           ))}

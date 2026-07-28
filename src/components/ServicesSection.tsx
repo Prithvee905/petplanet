@@ -56,7 +56,7 @@ const services = [
     icon: Pill,
     title: 'Pharmacy & Pet Care Store',
     description: 'Fully equipped on-site store stocking prescription veterinary pharmaceuticals, specialized clinical nutrition, wellness supplements, and everyday essentials for your pet.',
-    image: '/pet-store.jpg',
+    image: '/pet-pharmacy-store.jpg',
   },
   {
     icon: AlertCircle,

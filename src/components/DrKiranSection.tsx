@@ -45,7 +45,7 @@ export function DrKiranSection() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-orange/30">
               <img
-                src="https://images.unsplash.com/photo-1612349317150-e410f624c427?q=80&w=2070&auto=format&fit=crop"
+                src="/dr-kiran.jpg"
                 alt="Dr. M. Kiran Kumar – Founder & Chief Veterinarian, Pet Planet"
                 className="w-full h-[480px] object-cover object-top"
               />
@@ -56,7 +56,7 @@ export function DrKiranSection() {
                 <div className="bg-black/80 backdrop-blur-sm border border-orange/30 rounded-xl px-5 py-4">
                   <p className="font-display font-bold text-white text-lg">Dr. M. Kiran Kumar</p>
                   <p className="text-orange text-sm font-medium">Founder &amp; Chief Veterinarian</p>
-                  <p className="text-gray-400 text-xs mt-1">16+ Years of Veterinary Excellence</p>
+                  <p className="text-gray-400 text-xs mt-1">17+ Years of Veterinary Excellence</p>
                 </div>
               </div>
             </div>

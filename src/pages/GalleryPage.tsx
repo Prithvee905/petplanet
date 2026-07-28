@@ -37,7 +37,7 @@ const galleryItems = [
   {
     title: 'In-House Pet Store & Prescription Pharmacy',
     category: 'Pharmacy & Store',
-    image: 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?q=80&w=2070&auto=format&fit=crop',
+    image: '/pet-pharmacy-store.jpg',
     caption: 'Fully stocked with veterinary pharmaceuticals, therapeutic diets, and accessories.',
   },
 ];
