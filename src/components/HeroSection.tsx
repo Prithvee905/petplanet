@@ -16,16 +16,16 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
-        {/* Mobile & Laptop Gradients: Soft dark gradient for readability, ultra-clean right side for dog face */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/60 to-black/90 lg:bg-gradient-to-r lg:from-black lg:via-black/10 lg:to-transparent z-10 pointer-events-none" />
+        {/* Mobile & Laptop Gradients: Crisp, clear dog image with dark backdrop behind text */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/30 to-transparent lg:from-black lg:via-black/10 lg:to-transparent z-10 pointer-events-none" />
         {/* Subtle bottom fade */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 pointer-events-none" />
 
         {/* Dog image — face + neck, crystal clear focal point on the eyes & face */}
         <img
           src="/hero-dog.png"
           alt="Pet Planet Husky Dog Patient"
-          className="absolute inset-0 w-full h-full object-cover opacity-95 lg:opacity-100"
+          className="absolute inset-0 w-full h-full object-cover opacity-100"
           style={{ objectPosition: 'center 28%' }}
         />
       </motion.div>
