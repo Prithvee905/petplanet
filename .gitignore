@@ -27,3 +27,5 @@ dist-ssr
 public/*.mp4
 public/*.mov
 public/*.MOV
+# Exception: compressed web-optimised video is small enough
+!public/clinic-gallery-hero-web.mp4

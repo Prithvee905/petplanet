@@ -59,7 +59,7 @@ export function GalleryPage() {
           playsInline
           preload="metadata"
         >
-          <source src="/clinic-gallery-hero-trimmed.mp4" type="video/mp4" />
+          <source src="/clinic-gallery-hero-web.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/65" />
         <Doodle type="paw" className="top-10 left-[8%] w-20 h-20 text-orange/20" />
