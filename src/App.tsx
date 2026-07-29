@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 
@@ -20,6 +20,19 @@ import { NotFound } from './pages/NotFound';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    // Auto-open modal once per browser session after a short delay
+    const hasAutoOpened = sessionStorage.getItem('petPlanetAppointmentAutoOpened');
+    if (!hasAutoOpened) {
+      const timer = setTimeout(() => {
+        setIsModalOpen(true);
+        sessionStorage.setItem('petPlanetAppointmentAutoOpened', 'true');
+      }, 25000); // 25 seconds delay
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
 
   const handleBookClick = () => {
     setIsModalOpen(true);
