@@ -37,7 +37,7 @@ const galleryItems = [
   {
     title: 'In-House Pet Store & Prescription Pharmacy',
     category: 'Pharmacy & Store',
-    image: '/pet-pharmacy-store.jpg',
+    image: '/pet-care-store.png',
     caption: 'Fully stocked with veterinary pharmaceuticals, therapeutic diets, and accessories.',
   },
 ];
@@ -50,7 +50,18 @@ export function GalleryPage() {
         <meta name="description" content="Explore photos of Pet Planet Dog Clinic & Animal Diagnostics in Andal Homes, RK Puram, Hyderabad. Take a visual tour of our modern facilities, lab, and patient rooms." />
       </Helmet>
 
-      <div className="pt-28 pb-16 bg-black text-white relative overflow-hidden">
+      <div className="pt-28 pb-16 min-h-[420px] md:min-h-[520px] bg-black text-white relative overflow-hidden flex items-center">
+        <video
+          className="absolute inset-0 h-full w-full object-cover object-top scale-110"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        >
+          <source src="/clinic-gallery-hero-trimmed.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/65" />
         <Doodle type="paw" className="top-10 left-[8%] w-20 h-20 text-orange/20" />
         <Doodle type="sparkle" className="bottom-8 right-[10%] w-16 h-16 text-orange/30" />
 
