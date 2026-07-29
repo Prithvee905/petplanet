@@ -89,7 +89,7 @@ export function DiagnosticsSection() {
             {diagnosticsShowcase.map((item, index) => (
               <motion.div
                 key={item.title}
-                className={`group relative overflow-hidden rounded-[28px] border border-white/10 bg-black shadow-[0_24px_80px_rgba(0,0,0,0.35)] ${item.className}`}
+                className={`group relative overflow-hidden rounded-[28px] border border-white/10 bg-white/5 shadow-[0_24px_80px_rgba(0,0,0,0.35)] ${item.className}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -98,7 +98,7 @@ export function DiagnosticsSection() {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className={`h-full w-full ${item.imageClassName} object-contain transition-transform duration-700 group-hover:scale-105`}
+                  className={`h-full w-full ${item.imageClassName} object-contain bg-neutral-950 transition-transform duration-700 group-hover:scale-[1.02]`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4">
