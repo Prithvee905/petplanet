@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Calendar } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Doodle } from './Doodle';
 
 interface HeroSectionProps {
@@ -78,13 +79,13 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
                 <span>Book Appointment</span>
                 <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </button>
-              <a
-                href="#services"
+              <Link
+                to="/services"
                 className="flex-1 group flex items-center justify-center gap-1.5 sm:gap-2.5 bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:border-white/40 text-white px-3 sm:px-6 py-2.5 sm:py-3 rounded-full font-semibold text-xs sm:text-base transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 shadow-md shadow-black/20 whitespace-nowrap"
               >
                 <span>Our Services</span>
                 <ArrowRight size={16} className="group-hover:translate-x-1.5 transition-transform duration-300 text-orange shrink-0" />
-              </a>
+              </Link>
             </motion.div>
           </div>
         </div>

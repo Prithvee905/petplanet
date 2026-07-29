@@ -90,52 +90,52 @@ ${data.message}
             onClick={onClose}
           />
           <motion.div
-            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-lg bg-black/95 backdrop-blur-2xl rounded-2xl shadow-2xl border border-white/10 overflow-hidden"
+            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[92%] max-w-md md:max-w-lg bg-black/95 backdrop-blur-2xl rounded-2xl shadow-2xl border border-white/10 overflow-hidden"
             initial={{ opacity: 0, scale: 0.95, y: '-45%', x: '-50%' }}
             animate={{ opacity: 1, scale: 1, y: '-50%', x: '-50%' }}
             exit={{ opacity: 0, scale: 0.95, y: '-45%', x: '-50%' }}
           >
-            <div className="flex justify-between items-center p-6 border-b border-white/10">
-              <h3 className="text-2xl font-display font-bold text-white">Book an Appointment</h3>
+            <div className="flex justify-between items-center p-4 sm:p-6 border-b border-white/10">
+              <h3 className="text-xl sm:text-2xl font-display font-bold text-white">Book an Appointment</h3>
               <button onClick={onClose} className="text-gray-400 hover:text-white transition-colors">
-                <X size={24} />
+                <X size={20} />
               </button>
             </div>
 
-            <div className="p-6">
+            <div className="p-4 sm:p-6">
               {success ? (
                 <motion.div 
-                  className="flex flex-col items-center justify-center py-12"
+                   className="flex flex-col items-center justify-center py-8 sm:py-12"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                 >
-                  <CheckCircle2 className="w-20 h-20 text-orange mb-6" />
-                  <h4 className="text-2xl font-display font-bold mb-2 text-white">Request Sent!</h4>
-                  <p className="text-gray-400 text-center">We will contact you shortly to confirm your appointment.</p>
+                  <CheckCircle2 className="w-16 h-16 sm:w-20 sm:h-20 text-orange mb-4 sm:mb-6" />
+                  <h4 className="text-xl sm:text-2xl font-display font-bold mb-2 text-white">Request Sent!</h4>
+                  <p className="text-gray-400 text-center text-sm sm:text-base">We will contact you shortly to confirm your appointment.</p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
                   {error && (
-                    <div className="bg-red-50 text-red-600 p-3 rounded-sm text-sm border border-red-100">
+                    <div className="bg-red-50 text-red-600 p-2.5 rounded-sm text-sm border border-red-100">
                       {error}
                     </div>
                   )}
                   
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-1">Your Name *</label>
-                      <input required name="name" type="text" className="w-full px-4 py-2 bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-colors" />
+                      <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1">Your Name *</label>
+                      <input required name="name" type="text" className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-colors" />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-1">Phone Number *</label>
-                      <input required name="phone" type="tel" className="w-full px-4 py-2 bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-colors" />
+                      <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1">Phone Number *</label>
+                      <input required name="phone" type="tel" className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-colors" />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-1">Pet Type *</label>
-                      <select required name="pet_type" className="w-full px-4 py-2 bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-colors [&>option]:bg-gray-900">
+                      <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1">Pet Type *</label>
+                      <select required name="pet_type" className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-colors [&>option]:bg-gray-900">
                         <option value="">Select...</option>
                         <option value="Dog">Dog</option>
                         <option value="Cat">Cat</option>
@@ -143,31 +143,31 @@ ${data.message}
                       </select>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-1">Pet Name</label>
-                      <input name="pet_name" type="text" className="w-full px-4 py-2 bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-colors" />
+                      <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1">Pet Name</label>
+                      <input name="pet_name" type="text" className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-colors" />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-1">Preferred Date *</label>
-                      <input required name="preferred_date" type="date" className="w-full px-4 py-2 bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-colors [color-scheme:dark]" />
+                      <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1">Preferred Date *</label>
+                      <input required name="preferred_date" type="date" className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-colors [color-scheme:dark]" />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-300 mb-1">Preferred Time</label>
-                      <input name="preferred_time" type="time" className="w-full px-4 py-2 bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-colors [color-scheme:dark]" />
+                      <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1">Preferred Time</label>
+                      <input name="preferred_time" type="time" className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-colors [color-scheme:dark]" />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-1">Message (Optional)</label>
-                    <textarea name="message" rows={3} className="w-full px-4 py-2 bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent resize-none transition-colors"></textarea>
+                    <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1">Message (Optional)</label>
+                    <textarea name="message" rows={2} className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent resize-none transition-colors"></textarea>
                   </div>
 
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-orange hover:bg-[#d95a00] text-white py-3 rounded-xl font-bold transition-transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center mt-6 shadow-lg shadow-orange/20"
+                    className="w-full bg-orange hover:bg-[#d95a00] text-white py-2.5 sm:py-3 rounded-xl font-bold text-sm sm:text-base transition-transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center mt-4 sm:mt-6 shadow-lg shadow-orange/20"
                   >
                     {loading ? <Loader2 className="animate-spin w-5 h-5" /> : 'Submit Request'}
                   </button>
