@@ -8,7 +8,8 @@ const services = [
     title: 'Preventive Healthcare & Routine Check-ups',
     description: 'Comprehensive prophylactic wellness examinations, vital sign evaluations, and early health screening for small animals.',
     image: '/pet-healthcare.jpg',
-    imagePosition: 'object-left',
+    imagePosition: 'object-bottom',
+    imageStyle: { objectPosition: '50% 90%' },
   },
   {
     icon: Syringe,
@@ -104,11 +105,12 @@ export function ServicesSection() {
               transition={{ duration: 0.5, delay: index * 0.05 }}
             >
               {/* Card Image Header - Responsive height for better mobile viewing */}
-              <div className="relative h-48 sm:h-64 lg:h-80 w-full overflow-hidden bg-gray-200">
+              <div className="relative h-56 sm:h-64 lg:h-80 w-full overflow-hidden bg-gray-200">
                 <img
                   src={service.image}
                   alt={service.title}
                   className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ${service.imagePosition || 'object-center'}`}
+                  style={service.imageStyle || {}}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
                 <div className="absolute bottom-4 left-4 w-12 h-12 bg-orange text-white rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 z-10">
