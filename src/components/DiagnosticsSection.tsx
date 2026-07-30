@@ -19,14 +19,14 @@ const diagnosticsShowcase = [
   {
     title: 'Digital X-Ray Imaging',
     description: 'Clear radiographs for bone, chest, and abdominal screening.',
-    image: '/diagnostics-xray.jpg',
+    image: '/diagnostics-ultrasound.jpg',
     className: 'md:col-span-1',
     imageClassName: 'object-center',
   },
   {
     title: 'Diagnostic Ultrasound',
     description: 'Real-time internal imaging for soft tissue and abdominal evaluation.',
-    image: '/diagnostics-ultrasound.jpg',
+    image: '/diagnostics-xray.jpg',
     className: 'md:col-span-1',
     imageClassName: 'object-center',
   },
