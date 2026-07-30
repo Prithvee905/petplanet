@@ -45,13 +45,11 @@ export function Navbar({ onBookClick }: NavbarProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           <div className="flex items-center">
             <Link to="/" className="flex items-center group">
-              <div className="bg-white/95 px-3 py-1.5 rounded-xl shadow-md border border-white/25 group-hover:scale-105 transition-transform duration-300 flex items-center justify-center">
-                <img 
-                  src="/logo.png" 
-                  alt="Pet Planet Logo" 
-                  className="h-9 md:h-11 w-auto object-contain"
-                />
-              </div>
+              <img 
+                src="/logo-white.png" 
+                alt="Pet Planet Logo" 
+                className="h-12 md:h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-md"
+              />
             </Link>
           </div>
 
