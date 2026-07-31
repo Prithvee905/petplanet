@@ -101,86 +101,135 @@ Submitted live from petplanet website.
             onClick={onClose}
           />
           <motion.div
-            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[92%] max-w-md md:max-w-lg bg-black/95 backdrop-blur-2xl rounded-2xl shadow-2xl border border-white/10 overflow-hidden"
+            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[92%] max-w-md md:max-w-lg bg-black/95 backdrop-blur-2xl rounded-2xl shadow-2xl border border-white/15 overflow-hidden max-h-[90vh] flex flex-col"
             initial={{ opacity: 0, scale: 0.95, y: '-45%', x: '-50%' }}
             animate={{ opacity: 1, scale: 1, y: '-50%', x: '-50%' }}
             exit={{ opacity: 0, scale: 0.95, y: '-45%', x: '-50%' }}
           >
-            <div className="flex justify-between items-center p-4 sm:p-6 border-b border-white/10">
-              <h3 className="text-xl sm:text-2xl font-display font-bold text-white">Book an Appointment</h3>
-              <button onClick={onClose} className="text-gray-400 hover:text-white transition-colors">
-                <X size={20} />
+            {/* Top Orange Decorative Accent Bar */}
+            <div className="h-1.5 w-full bg-gradient-to-r from-orange via-amber-500 to-orange" />
+
+            <div className="flex justify-between items-center p-4 sm:p-5 border-b border-white/10 shrink-0">
+              <div className="flex items-center gap-2">
+                <div className="w-2.5 h-2.5 rounded-full bg-orange animate-pulse" />
+                <h3 className="text-lg sm:text-xl font-display font-bold text-white tracking-wide">Book an Appointment</h3>
+              </div>
+              <button 
+                onClick={onClose} 
+                className="w-8 h-8 rounded-full bg-white/5 hover:bg-white/15 text-gray-400 hover:text-white flex items-center justify-center transition-colors"
+                aria-label="Close modal"
+              >
+                <X size={18} />
               </button>
             </div>
 
-            <div className="p-4 sm:p-6">
+            <div className="p-4 sm:p-6 overflow-y-auto custom-scrollbar">
               {success ? (
                 <motion.div 
-                   className="flex flex-col items-center justify-center py-8 sm:py-12"
+                   className="flex flex-col items-center justify-center py-8 sm:py-10 text-center"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                 >
-                  <CheckCircle2 className="w-16 h-16 sm:w-20 sm:h-20 text-orange mb-4 sm:mb-6" />
+                  <CheckCircle2 className="w-16 h-16 sm:w-20 sm:h-20 text-orange mb-4 animate-bounce" />
                   <h4 className="text-xl sm:text-2xl font-display font-bold mb-2 text-white">Request Sent!</h4>
-                  <p className="text-gray-400 text-center text-sm sm:text-base">We will contact you shortly to confirm your appointment.</p>
+                  <p className="text-gray-300 text-sm sm:text-base max-w-xs">We will contact you shortly to confirm your pet's appointment.</p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4">
                   {error && (
-                    <div className="bg-red-50 text-red-600 p-2.5 rounded-sm text-sm border border-red-100">
+                    <div className="bg-red-500/10 border border-red-500/30 text-red-300 p-3 rounded-xl text-xs sm:text-sm">
                       {error}
                     </div>
                   )}
                   
-                  <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                  {/* Name and Phone */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     <div>
                       <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1">Your Name *</label>
-                      <input required name="name" type="text" className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-colors" />
+                      <input 
+                        required 
+                        name="name" 
+                        type="text" 
+                        placeholder="John Doe"
+                        className="w-full px-3.5 py-2.5 sm:py-2 text-base sm:text-sm bg-white/5 border border-white/10 text-white placeholder:text-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all" 
+                      />
                     </div>
                     <div>
                       <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1">Phone Number *</label>
-                      <input required name="phone" type="tel" className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-colors" />
+                      <input 
+                        required 
+                        name="phone" 
+                        type="tel" 
+                        placeholder="+91 98765 43210"
+                        className="w-full px-3.5 py-2.5 sm:py-2 text-base sm:text-sm bg-white/5 border border-white/10 text-white placeholder:text-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all" 
+                      />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                  {/* Pet Type and Pet Name */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     <div>
                       <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1">Pet Type *</label>
-                      <select required name="pet_type" className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-colors [&>option]:bg-gray-900">
-                        <option value="">Select...</option>
+                      <select 
+                        required 
+                        name="pet_type" 
+                        className="w-full px-3.5 py-2.5 sm:py-2 text-base sm:text-sm bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all [&>option]:bg-gray-900"
+                      >
+                        <option value="">Select Pet Type...</option>
                         <option value="Dog">Dog</option>
                         <option value="Cat">Cat</option>
                         <option value="Other">Other</option>
                       </select>
                     </div>
                     <div>
-                      <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1">Pet Name</label>
-                      <input name="pet_name" type="text" className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-colors" />
+                      <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1">Pet Name (Optional)</label>
+                      <input 
+                        name="pet_name" 
+                        type="text" 
+                        placeholder="e.g. Bruno"
+                        className="w-full px-3.5 py-2.5 sm:py-2 text-base sm:text-sm bg-white/5 border border-white/10 text-white placeholder:text-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all" 
+                      />
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                  {/* Preferred Date and Time */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     <div>
                       <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1">Preferred Date *</label>
-                      <input required name="preferred_date" type="date" className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-colors [color-scheme:dark]" />
+                      <input 
+                        required 
+                        name="preferred_date" 
+                        type="date" 
+                        className="w-full px-3.5 py-2.5 sm:py-2 text-base sm:text-sm bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all [color-scheme:dark]" 
+                      />
                     </div>
                     <div>
                       <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1">Preferred Time</label>
-                      <input name="preferred_time" type="time" className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-colors [color-scheme:dark]" />
+                      <input 
+                        name="preferred_time" 
+                        type="time" 
+                        className="w-full px-3.5 py-2.5 sm:py-2 text-base sm:text-sm bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all [color-scheme:dark]" 
+                      />
                     </div>
                   </div>
 
+                  {/* Message */}
                   <div>
-                    <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1">Message (Optional)</label>
-                    <textarea name="message" rows={2} className="w-full px-3 sm:px-4 py-1.5 sm:py-2 text-sm bg-white/5 border border-white/10 text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent resize-none transition-colors"></textarea>
+                    <label className="block text-xs sm:text-sm font-medium text-gray-300 mb-1">Reason / Notes (Optional)</label>
+                    <textarea 
+                      name="message" 
+                      rows={2} 
+                      placeholder="e.g. Routine check-up, vaccination, health concern..."
+                      className="w-full px-3.5 py-2.5 sm:py-2 text-base sm:text-sm bg-white/5 border border-white/10 text-white placeholder:text-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent resize-none transition-all"
+                    ></textarea>
                   </div>
 
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-orange hover:bg-[#d95a00] text-white py-2.5 sm:py-3 rounded-xl font-bold text-sm sm:text-base transition-transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center mt-4 sm:mt-6 shadow-lg shadow-orange/20"
+                    className="w-full bg-gradient-to-r from-orange to-amber-500 hover:from-orange/90 hover:to-amber-500/90 text-white py-3 rounded-xl font-bold text-sm sm:text-base transition-all hover:shadow-lg hover:shadow-orange/30 active:scale-[0.98] flex items-center justify-center mt-4 shadow-md shadow-orange/20"
                   >
-                    {loading ? <Loader2 className="animate-spin w-5 h-5" /> : 'Submit Request'}
+                    {loading ? <Loader2 className="animate-spin w-5 h-5" /> : 'Submit Appointment Request'}
                   </button>
                 </form>
               )}
