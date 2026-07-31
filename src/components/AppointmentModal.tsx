@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Loader2, CheckCircle2 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
@@ -12,6 +12,17 @@ export function AppointmentModal({ isOpen, onClose }: AppointmentModalProps) {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -93,19 +104,24 @@ Submitted live from petplanet website.
     <AnimatePresence>
       {isOpen && (
         <>
+          {/* Locked Backdrop Overlay */}
           <motion.div
-            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm"
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
           />
-          <motion.div
-            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[92%] max-w-md md:max-w-lg bg-black/95 backdrop-blur-2xl rounded-2xl shadow-2xl border border-white/15 overflow-hidden max-h-[90vh] flex flex-col"
-            initial={{ opacity: 0, scale: 0.95, y: '-45%', x: '-50%' }}
-            animate={{ opacity: 1, scale: 1, y: '-50%', x: '-50%' }}
-            exit={{ opacity: 0, scale: 0.95, y: '-45%', x: '-50%' }}
-          >
+
+          {/* Locked Centered Modal Container */}
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-3.5 sm:p-4 pointer-events-none">
+            <motion.div
+              className="pointer-events-auto w-full max-w-md md:max-w-lg bg-black/95 backdrop-blur-2xl rounded-2xl shadow-2xl border border-white/15 overflow-hidden max-h-[85vh] sm:max-h-[90vh] flex flex-col"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
+            >
             {/* Top Orange Decorative Accent Bar */}
             <div className="h-1.5 w-full bg-gradient-to-r from-orange via-amber-500 to-orange" />
 
@@ -235,8 +251,9 @@ Submitted live from petplanet website.
               )}
             </div>
           </motion.div>
-        </>
-      )}
-    </AnimatePresence>
-  );
+        </div>
+      </>
+    )}
+  </AnimatePresence>
+);
 }
