@@ -55,7 +55,7 @@ export function AppointmentModal({ isOpen, onClose }: AppointmentModalProps) {
         console.warn('Supabase DB save skipped/failed:', dbErr);
       }
       
-      // 2. Send instant Email Notification to Owner's Gmail via Web3Forms
+      // 2. Send instant Email Notification to petplanetanimaldiagnostics@gmail.com via Web3Forms
       const web3FormsKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
       if (web3FormsKey) {
         const res = await fetch('https://api.web3forms.com/submit', {
@@ -66,6 +66,7 @@ export function AppointmentModal({ isOpen, onClose }: AppointmentModalProps) {
           },
           body: JSON.stringify({
             access_key: web3FormsKey,
+            to: 'petplanetanimaldiagnostics@gmail.com',
             subject: `🐶 New Appointment Request: ${data.name} (${data.pet_type})`,
             from_name: 'Pet Planet Website',
             message: `
@@ -122,7 +123,7 @@ Submitted live from petplanet website.
           {/* Locked Centered Modal Container */}
           <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 pointer-events-none overscroll-contain touch-none">
             <motion.div
-              className="pointer-events-auto w-full max-w-[380px] sm:max-w-md bg-black/95 backdrop-blur-2xl rounded-2xl shadow-2xl border border-white/15 overflow-hidden max-h-[92vh] flex flex-col overscroll-contain"
+              className="pointer-events-auto w-full max-w-[380px] sm:max-w-md bg-black/95 backdrop-blur-2xl rounded-2xl shadow-2xl border-0 sm:border sm:border-white/10 overflow-hidden max-h-[92vh] flex flex-col overscroll-contain"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
@@ -173,7 +174,7 @@ Submitted live from petplanet website.
                         name="name" 
                         type="text" 
                         placeholder="John Doe"
-                        className="w-full px-3 py-1.5 text-xs sm:text-sm bg-white/5 border border-white/10 text-white placeholder:text-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all" 
+                        className="w-full px-3 py-1.5 text-xs sm:text-sm bg-white/5 border border-white/5 sm:border-white/10 text-white placeholder:text-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all" 
                       />
                     </div>
                     <div>
@@ -183,7 +184,7 @@ Submitted live from petplanet website.
                         name="phone" 
                         type="tel" 
                         placeholder="+91 98765 43210"
-                        className="w-full px-3 py-1.5 text-xs sm:text-sm bg-white/5 border border-white/10 text-white placeholder:text-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all" 
+                        className="w-full px-3 py-1.5 text-xs sm:text-sm bg-white/5 border border-white/5 sm:border-white/10 text-white placeholder:text-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all" 
                       />
                     </div>
                   </div>
@@ -195,7 +196,7 @@ Submitted live from petplanet website.
                       <select 
                         required 
                         name="pet_type" 
-                        className="w-full px-1.5 sm:px-2.5 py-1 sm:py-1.5 text-[11px] sm:text-xs bg-white/5 border border-white/10 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all [&>option]:bg-gray-900 overflow-hidden text-ellipsis"
+                        className="w-full px-1.5 sm:px-2.5 py-1 sm:py-1.5 text-[11px] sm:text-xs bg-white/5 border border-white/5 sm:border-white/10 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all [&>option]:bg-gray-900 overflow-hidden text-ellipsis"
                       >
                         <option value="">Select...</option>
                         <option value="Dog">Dog</option>
@@ -209,7 +210,7 @@ Submitted live from petplanet website.
                         name="pet_name" 
                         type="text" 
                         placeholder="e.g. Bruno"
-                        className="w-full px-2 sm:px-3 py-1 sm:py-1.5 text-xs bg-white/5 border border-white/10 text-white placeholder:text-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all" 
+                        className="w-full px-2 sm:px-3 py-1 sm:py-1.5 text-xs bg-white/5 border border-white/5 sm:border-white/10 text-white placeholder:text-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all" 
                       />
                     </div>
                   </div>
@@ -222,7 +223,7 @@ Submitted live from petplanet website.
                         required 
                         name="preferred_date" 
                         type="date" 
-                        className="w-full px-2 sm:px-3 py-1.5 text-xs sm:text-sm bg-white/5 border border-white/10 text-white text-center rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all [color-scheme:dark]" 
+                        className="w-full px-2 sm:px-3 py-1.5 text-xs sm:text-sm bg-white/5 border border-white/5 sm:border-white/10 text-white text-center rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all [color-scheme:dark]" 
                       />
                     </div>
                     <div className="min-w-0 flex flex-col items-center">
@@ -230,7 +231,7 @@ Submitted live from petplanet website.
                       <input 
                         name="preferred_time" 
                         type="time" 
-                        className="w-full px-2 sm:px-3 py-1.5 text-xs sm:text-sm bg-white/5 border border-white/10 text-white text-center rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all [color-scheme:dark]" 
+                        className="w-full px-2 sm:px-3 py-1.5 text-xs sm:text-sm bg-white/5 border border-white/5 sm:border-white/10 text-white text-center rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all [color-scheme:dark]" 
                       />
                     </div>
                   </div>
@@ -242,7 +243,7 @@ Submitted live from petplanet website.
                       name="message" 
                       rows={2} 
                       placeholder="Health concerns, notes..."
-                      className="w-full px-3 py-1.5 text-xs sm:text-sm bg-white/5 border border-white/10 text-white placeholder:text-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent resize-none transition-all"
+                      className="w-full px-3 py-1.5 text-xs sm:text-sm bg-white/5 border border-white/5 sm:border-white/10 text-white placeholder:text-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent resize-none transition-all"
                     ></textarea>
                   </div>
 

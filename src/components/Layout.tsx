@@ -1,6 +1,7 @@
 import { useEffect, type ReactNode } from 'react';
 import Lenis from 'lenis';
 import { Doodle } from './Doodle';
+import { SocialFloatingButtons } from './SocialFloatingButtons';
 
 interface LayoutProps {
   children: ReactNode;
@@ -56,6 +57,9 @@ export function Layout({ children }: LayoutProps) {
       <div className="relative z-10 flex-grow flex flex-col">
         {children}
       </div>
+
+      {/* Floating social redirect buttons */}
+      <SocialFloatingButtons />
     </div>
   );
 }
