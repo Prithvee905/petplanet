@@ -30,16 +30,18 @@ export function AppointmentModal({ isOpen, onClose }: AppointmentModalProps) {
     };
 
     try {
-      const { error: submitError } = await supabase
-        .from('appointments')
-        .insert([data]);
-
-      if (submitError) throw submitError;
+      // 1. Save to Supabase DB (non-blocking)
+      try {
+        const { error: dbError } = await supabase.from('appointments').insert([data]);
+        if (dbError) console.warn('Supabase DB insert warning:', dbError.message);
+      } catch (dbErr) {
+        console.warn('Supabase DB save skipped/failed:', dbErr);
+      }
       
-      // Send Email via Web3Forms
+      // 2. Send instant Email Notification to Owner's Gmail via Web3Forms
       const web3FormsKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
       if (web3FormsKey) {
-        await fetch('https://api.web3forms.com/submit', {
+        const res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -47,23 +49,32 @@ export function AppointmentModal({ isOpen, onClose }: AppointmentModalProps) {
           },
           body: JSON.stringify({
             access_key: web3FormsKey,
-            subject: 'New Appointment Booking - Pet Planet',
+            subject: `🐶 New Appointment Request: ${data.name} (${data.pet_type})`,
             from_name: 'Pet Planet Website',
             message: `
-New Appointment Request:
+NEW APPOINTMENT BOOKING REQUEST:
+==================================
+Customer Name : ${data.name}
+Phone Number  : ${data.phone}
 
-Name: ${data.name}
-Phone: ${data.phone}
-Pet Name: ${data.pet_name}
-Pet Type: ${data.pet_type}
+Pet Name      : ${data.pet_name || 'N/A'}
+Pet Type      : ${data.pet_type}
+
 Preferred Date: ${data.preferred_date}
-Preferred Time: ${data.preferred_time}
+Preferred Time: ${data.preferred_time || 'Anytime'}
 
-Message: 
-${data.message}
+Customer Notes / Message:
+${data.message || 'No additional notes'}
+----------------------------------
+Submitted live from petplanet website.
             `
           })
         });
+
+        const resData = await res.json();
+        if (!res.ok || !resData.success) {
+          throw new Error(resData.message || 'Email delivery failed. Please check Web3Forms Access Key.');
+        }
       }
 
       setSuccess(true);
