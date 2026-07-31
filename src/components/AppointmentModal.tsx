@@ -189,13 +189,13 @@ Submitted live from petplanet website.
                   </div>
 
                   {/* Pet Type and Pet Name */}
-                  <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
-                    <div>
+                  <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                    <div className="min-w-0">
                       <label className="block text-xs font-medium text-gray-300 mb-0.5">Pet Type *</label>
                       <select 
                         required 
                         name="pet_type" 
-                        className="w-full px-2.5 py-1.5 text-xs sm:text-sm bg-white/5 border border-white/10 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all [&>option]:bg-gray-900"
+                        className="w-full px-1.5 sm:px-2.5 py-1 sm:py-1.5 text-[11px] sm:text-xs bg-white/5 border border-white/10 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all [&>option]:bg-gray-900 overflow-hidden text-ellipsis"
                       >
                         <option value="">Select...</option>
                         <option value="Dog">Dog</option>
@@ -203,34 +203,34 @@ Submitted live from petplanet website.
                         <option value="Other">Other</option>
                       </select>
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <label className="block text-xs font-medium text-gray-300 mb-0.5">Pet Name</label>
                       <input 
                         name="pet_name" 
                         type="text" 
                         placeholder="e.g. Bruno"
-                        className="w-full px-3 py-1.5 text-xs sm:text-sm bg-white/5 border border-white/10 text-white placeholder:text-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all" 
+                        className="w-full px-2 sm:px-3 py-1 sm:py-1.5 text-xs bg-white/5 border border-white/10 text-white placeholder:text-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all" 
                       />
                     </div>
                   </div>
 
-                  {/* Preferred Date and Time (Side-by-Side to save space) */}
-                  <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
-                    <div>
-                      <label className="block text-xs font-medium text-gray-300 mb-0.5">Date *</label>
+                  {/* Preferred Date and Time (Collision-Protected Layout) */}
+                  <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                    <div className="min-w-0">
+                      <label className="block text-[11px] sm:text-xs font-medium text-gray-300 mb-0.5">Date *</label>
                       <input 
                         required 
                         name="preferred_date" 
                         type="date" 
-                        className="w-full px-2.5 py-1.5 text-xs sm:text-sm bg-white/5 border border-white/10 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all [color-scheme:dark]" 
+                        className="w-full px-1.5 sm:px-2.5 py-1 sm:py-1.5 text-[11px] sm:text-xs bg-white/5 border border-white/10 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all [color-scheme:dark] overflow-hidden text-ellipsis" 
                       />
                     </div>
-                    <div>
-                      <label className="block text-xs font-medium text-gray-300 mb-0.5">Time</label>
+                    <div className="min-w-0">
+                      <label className="block text-[11px] sm:text-xs font-medium text-gray-300 mb-0.5">Time</label>
                       <input 
                         name="preferred_time" 
                         type="time" 
-                        className="w-full px-2.5 py-1.5 text-xs sm:text-sm bg-white/5 border border-white/10 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all [color-scheme:dark]" 
+                        className="w-full px-1.5 sm:px-2.5 py-1 sm:py-1.5 text-[11px] sm:text-xs bg-white/5 border border-white/10 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all [color-scheme:dark] overflow-hidden text-ellipsis" 
                       />
                     </div>
                   </div>

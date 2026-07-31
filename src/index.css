@@ -7,10 +7,21 @@
 @layer base {
   html {
     scroll-behavior: initial;
+    touch-action: manipulation;
+    -webkit-text-size-adjust: 100%;
   }
   
   body {
     @apply font-body text-black bg-white antialiased selection:bg-orange selection:text-white;
+    touch-action: manipulation;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Prevent mobile Safari and Chrome from auto-zooming on input focus */
+  @media screen and (max-width: 768px) {
+    input, select, textarea {
+      font-size: 16px !important;
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {
