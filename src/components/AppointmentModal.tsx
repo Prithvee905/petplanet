@@ -214,23 +214,23 @@ Submitted live from petplanet website.
                     </div>
                   </div>
 
-                  {/* Preferred Date and Time (Collision-Protected Layout) */}
-                  <div className="grid grid-cols-2 gap-2 sm:gap-3">
-                    <div className="min-w-0">
-                      <label className="block text-[11px] sm:text-xs font-medium text-gray-300 mb-0.5">Date *</label>
+                  {/* Preferred Date and Time (Centered with Spaces) */}
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                    <div className="min-w-0 flex flex-col items-center">
+                      <label className="block text-xs font-medium text-gray-300 mb-1 text-center">Date *</label>
                       <input 
                         required 
                         name="preferred_date" 
                         type="date" 
-                        className="w-full px-1.5 sm:px-2.5 py-1 sm:py-1.5 text-[11px] sm:text-xs bg-white/5 border border-white/10 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all [color-scheme:dark] overflow-hidden text-ellipsis" 
+                        className="w-full px-2 sm:px-3 py-1.5 text-xs sm:text-sm bg-white/5 border border-white/10 text-white text-center rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all [color-scheme:dark]" 
                       />
                     </div>
-                    <div className="min-w-0">
-                      <label className="block text-[11px] sm:text-xs font-medium text-gray-300 mb-0.5">Time</label>
+                    <div className="min-w-0 flex flex-col items-center">
+                      <label className="block text-xs font-medium text-gray-300 mb-1 text-center">Time</label>
                       <input 
                         name="preferred_time" 
                         type="time" 
-                        className="w-full px-1.5 sm:px-2.5 py-1 sm:py-1.5 text-[11px] sm:text-xs bg-white/5 border border-white/10 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all [color-scheme:dark] overflow-hidden text-ellipsis" 
+                        className="w-full px-2 sm:px-3 py-1.5 text-xs sm:text-sm bg-white/5 border border-white/10 text-white text-center rounded-lg focus:outline-none focus:ring-2 focus:ring-orange focus:border-transparent transition-all [color-scheme:dark]" 
                       />
                     </div>
                   </div>
