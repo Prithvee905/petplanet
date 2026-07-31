@@ -15,12 +15,18 @@ export function AppointmentModal({ isOpen, onClose }: AppointmentModalProps) {
 
   useEffect(() => {
     if (isOpen) {
+      document.documentElement.style.overflow = 'hidden';
       document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
     } else {
-      document.body.style.overflow = 'unset';
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
     };
   }, [isOpen]);
 
@@ -106,7 +112,7 @@ Submitted live from petplanet website.
         <>
           {/* Locked Backdrop Overlay */}
           <motion.div
-            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md"
+            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md touch-none select-none"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -114,18 +120,18 @@ Submitted live from petplanet website.
           />
 
           {/* Locked Centered Modal Container */}
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-3.5 sm:p-4 pointer-events-none">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-3.5 sm:p-4 pointer-events-none overscroll-contain touch-none">
             <motion.div
-              className="pointer-events-auto w-full max-w-md md:max-w-lg bg-black/95 backdrop-blur-2xl rounded-2xl shadow-2xl border border-white/15 overflow-hidden max-h-[85vh] sm:max-h-[90vh] flex flex-col"
+              className="pointer-events-auto w-full max-w-md md:max-w-lg bg-black/95 backdrop-blur-2xl rounded-2xl shadow-2xl border border-white/15 overflow-hidden max-h-[85vh] sm:max-h-[90vh] flex flex-col overscroll-contain"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.2, ease: 'easeOut' }}
             >
             {/* Top Orange Decorative Accent Bar */}
-            <div className="h-1.5 w-full bg-gradient-to-r from-orange via-amber-500 to-orange" />
+            <div className="h-1.5 w-full bg-gradient-to-r from-orange via-amber-500 to-orange shrink-0" />
 
-            <div className="flex justify-between items-center p-4 sm:p-5 border-b border-white/10 shrink-0">
+            <div className="flex justify-between items-center p-4 sm:p-5 border-b border-white/10 shrink-0 touch-none select-none">
               <div className="flex items-center gap-2">
                 <div className="w-2.5 h-2.5 rounded-full bg-orange animate-pulse" />
                 <h3 className="text-lg sm:text-xl font-display font-bold text-white tracking-wide">Book an Appointment</h3>
@@ -139,7 +145,7 @@ Submitted live from petplanet website.
               </button>
             </div>
 
-            <div className="p-4 sm:p-6 overflow-y-auto custom-scrollbar">
+            <div className="p-4 sm:p-6 overflow-y-auto overscroll-contain touch-pan-y custom-scrollbar select-text">
               {success ? (
                 <motion.div 
                    className="flex flex-col items-center justify-center py-8 sm:py-10 text-center"
