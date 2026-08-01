@@ -49,6 +49,27 @@ const detailedReviews = [
     date: 'Google Review \u2022 3 years ago',
     text: 'Though it\'s a little further from my place we still visit them over other clinics nearby solely because of how compassionate and loving they are towards animals. Their service is quick and apt. They once even waited for 30 extra mins after their closing time when we had an emergency. So, definitely a trustworthy clinic for your fur buddies.',
   },
+  {
+    name: 'Sadhu Ramakrishna',
+    pet: 'Pet Parent (8-Year Client)',
+    rating: 5,
+    date: 'Google Review \u2022 a year ago',
+    text: 'I have been going to Pet Planet from past 8 years with my 2 dogs. Recently one of my dog was suffering with multiorgan failure, Dr. Kiran sir took immediate care and it\'s 2 weeks now — from no chance of life, now there is lots of hope. Created excellent care, treatment, infrastructure, staff. Really thank you Kiran sir.',
+  },
+  {
+    name: 'Vineetha Gundluri',
+    pet: 'Shih Tzu (Tick Fever Recovery)',
+    rating: 5,
+    date: 'Google Review \u2022 2 years ago',
+    text: 'My puppy (7 months old Shih Tzu) was diagnosed with Tick fever, he was so sick and weak. Salines and injections were started once his reports came positive. I can see a huge difference before and after the treatment. I was too worried but doctors and junior doctors took extra care — I felt like he is in safe hands. After 5 days of treatment, his platelets and hemoglobin increased abruptly. I was so thankful that they treated my puppy and he got fully recovered \ud83d\ude0a',
+  },
+  {
+    name: 'Varkala Tejasri',
+    pet: 'Dog (General Treatment)',
+    rating: 5,
+    date: 'Google Review \u2022 a year ago',
+    text: 'Finding a trustworthy and affordable vet can be tough, but Pet Planet dog clinic is perfect! They offer great services at reasonable prices. My dog received excellent treatment and the staff was friendly, professional, and truly cared about my pet\'s well-being. The vet explained everything clearly and made sure my dog was comfortable. Highly recommend!',
+  },
 ];
 
 export function TestimonialsPage() {
