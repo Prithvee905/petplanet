@@ -48,7 +48,7 @@ export function Navbar({ onBookClick }: NavbarProps) {
               <img 
                 src="/logo-white.png" 
                 alt="Pet Planet Logo" 
-                className="h-12 md:h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-md"
+                className="h-14 sm:h-16 md:h-20 w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-md"
               />
             </Link>
           </div>
@@ -79,46 +79,68 @@ export function Navbar({ onBookClick }: NavbarProps) {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-white"
+              className="text-white p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors"
+              aria-label="Toggle Menu"
             >
-              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              {isMobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
             </button>
           </div>
         </div>
       </motion.nav>
 
-      {/* Mobile Nav Overlay */}
-      <motion.div
-        className="fixed inset-0 z-40 bg-black/95 backdrop-blur-sm md:hidden"
-        initial={{ opacity: 0, x: '100%' }}
-        animate={{ opacity: isMobileMenuOpen ? 1 : 0, x: isMobileMenuOpen ? 0 : '100%' }}
-        transition={{ duration: 0.3 }}
-      >
-        <div className="flex flex-col items-center justify-center h-full space-y-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.href}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={cn(
-                "text-2xl font-display hover:text-orange transition-colors",
-                location.pathname === link.href ? 'text-orange' : 'text-white'
-              )}
+      {/* Mobile Nav Centered Card & Backdrop */}
+      {isMobileMenuOpen && (
+        <>
+          {/* Backdrop click dismiss with background blur */}
+          <motion.div 
+            className="fixed inset-0 z-40 bg-black/70 backdrop-blur-md md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+
+          {/* Centered Display Container */}
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:hidden pointer-events-none">
+            <motion.div
+              className="pointer-events-auto w-full max-w-xs bg-black/95 backdrop-blur-2xl border border-white/15 rounded-2xl p-5 shadow-2xl overflow-hidden text-center"
+              initial={{ opacity: 0, scale: 0.9, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 10 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
             >
-              {link.name}
-            </Link>
-          ))}
-          <button
-            onClick={() => {
-              setIsMobileMenuOpen(false);
-              onBookClick();
-            }}
-            className="bg-orange text-white px-8 py-3 text-lg rounded-sm font-medium mt-4"
-          >
-            Book Appointment
-          </button>
-        </div>
-      </motion.div>
+              {/* Single vertical line layout in center */}
+              <div className="flex flex-col divide-y divide-white/10 text-center">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={cn(
+                      "py-2.5 px-4 text-base font-medium transition-all duration-200 flex items-center justify-center",
+                      location.pathname === link.href 
+                        ? 'text-orange font-bold' 
+                        : 'text-gray-200 hover:text-white hover:bg-white/5'
+                    )}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+
+              <button
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  onBookClick();
+                }}
+                className="w-full bg-gradient-to-r from-orange to-amber-500 hover:from-orange/90 hover:to-amber-500/90 text-white py-3 rounded-xl font-bold text-sm transition-all hover:shadow-lg hover:shadow-orange/30 active:scale-[0.98] mt-4 flex items-center justify-center gap-2"
+              >
+                Book Appointment
+              </button>
+            </motion.div>
+          </div>
+        </>
+      )}
     </>
   );
 }
