@@ -48,7 +48,7 @@ export function Navbar({ onBookClick }: NavbarProps) {
               <img 
                 src="/logo-white.png" 
                 alt="Pet Planet Logo" 
-                className="h-14 sm:h-16 md:h-20 w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-md"
+                className="h-14 sm:h-16 md:h-20 w-auto object-contain rounded-xl group-hover:scale-105 transition-transform duration-300 drop-shadow-md"
               />
             </Link>
           </div>
