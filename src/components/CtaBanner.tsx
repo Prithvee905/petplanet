@@ -7,12 +7,12 @@ interface CtaBannerProps {
 
 export function CtaBanner({ onBookClick }: CtaBannerProps) {
   return (
-    <section className="py-24 bg-[#C8621A] relative z-20 overflow-hidden">
+    <section className="py-24 bg-orange relative z-20 overflow-hidden">
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-black via-transparent to-transparent scale-150" />
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <motion.h2
-          className="text-4xl md:text-6xl font-display font-bold text-black mb-8 leading-tight"
+          className="text-4xl md:text-6xl font-display font-bold text-white mb-8 leading-tight drop-shadow-md"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
