@@ -1,12 +1,28 @@
 import { motion } from 'framer-motion';
 import { Doodle } from './Doodle';
 
-const doctors = [
+const founderDoctor = {
+  name: 'Dr. M. Kiran Kumar',
+  specialty: 'Founder & Chief Veterinarian',
+  bio: 'With over 17 years of hands-on experience, Dr. Kiran is a highly experienced small-animal veterinarian. He expertly handles both routine preventive care and complex surgical cases, including tumor removals, all while maintaining a calm, trusted bedside manner that puts pets and parents at ease.',
+  image: '/dr-kiran.jpg',
+};
+
+const associateDoctors = [
   {
-    name: 'Dr. M. Kiran Kumar',
-    specialty: 'Founder & Chief Veterinarian',
-    bio: 'With over 17 years of hands-on experience, Dr. Kiran is a highly experienced small-animal veterinarian. He expertly handles both routine preventive care and complex surgical cases, including tumor removals, all while maintaining a calm, trusted bedside manner that puts pets and parents at ease.',
-    image: '/dr-kiran.jpg',
+    name: 'Dr. Akhila',
+    specialty: 'Veterinary Practitioner',
+    image: '/dr-akhila.jpg',
+  },
+  {
+    name: 'Dr. Manasa',
+    specialty: 'Veterinary Practitioner',
+    image: '/dr-manasa.jpg',
+  },
+  {
+    name: 'Dr. T. Kiranmayee',
+    specialty: 'Veterinary Practitioner',
+    image: '/dr-kiranmayee.jpg',
   },
 ];
 
@@ -19,46 +35,82 @@ export function DoctorsSection() {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="mb-16 text-center sm:text-left"
+          className="mb-12 text-center sm:text-left"
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">Meet the <span className="text-orange">Doctor.</span></h2>
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">Meet the <span className="text-orange">Doctors.</span></h2>
           <p className="text-lg text-gray-800 max-w-2xl">
-            Passionate professional dedicated to the health and happiness of your pets.
+            Passionate professionals dedicated to the health and happiness of your pets.
           </p>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto">
-          {doctors.map((doc, index) => (
-            <motion.div
-              key={index}
-              className="group flex flex-col sm:flex-row gap-8 items-center bg-gray-100 p-8 rounded-2xl hover:bg-black hover:text-white transition-colors duration-500 shadow-xl"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="w-56 h-56 flex-shrink-0 overflow-hidden rounded-xl relative shadow-md">
-                <div className="absolute inset-0 bg-orange/20 mix-blend-multiply z-10 group-hover:opacity-0 transition-opacity duration-500" />
-                <img
-                  src={doc.image}
-                  alt={doc.name}
-                  className="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
-                />
-              </div>
-              <div>
-                <h3 className="text-3xl font-display font-bold mb-2 group-hover:text-orange transition-colors">{doc.name}</h3>
-                <p className="text-sm font-semibold text-orange group-hover:text-amber-400 mb-4 uppercase tracking-wider">{doc.specialty}</p>
-                <p className="text-gray-800 group-hover:text-gray-200 leading-relaxed text-base">
-                  {doc.bio}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+        {/* 🌟 1. Founder Card (Featured Big Card with Bio) */}
+        <div className="max-w-5xl mx-auto mb-16">
+          <motion.div
+            className="group flex flex-col sm:flex-row gap-8 items-center bg-gray-100 p-8 rounded-2xl hover:bg-black hover:text-white transition-colors duration-500 shadow-xl"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="w-56 h-64 sm:w-60 sm:h-72 flex-shrink-0 overflow-hidden rounded-xl relative shadow-md">
+              <div className="absolute inset-0 bg-orange/10 mix-blend-multiply z-10 group-hover:opacity-0 transition-opacity duration-500" />
+              <img
+                src={founderDoctor.image}
+                alt={founderDoctor.name}
+                className="w-full h-full object-cover object-top grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+              />
+            </div>
+            <div>
+              <h3 className="text-3xl sm:text-4xl font-display font-bold mb-2 group-hover:text-orange transition-colors">{founderDoctor.name}</h3>
+              <p className="text-sm font-semibold text-orange group-hover:text-amber-400 mb-4 uppercase tracking-wider">{founderDoctor.specialty}</p>
+              <p className="text-gray-800 group-hover:text-gray-200 leading-relaxed text-base">
+                {founderDoctor.bio}
+              </p>
+            </div>
+          </motion.div>
         </div>
+
+        {/* 🩺 2. Associate Doctors Grid (Clean Cards - Name & Specialty Only) */}
+        <div className="max-w-5xl mx-auto">
+          <h3 className="text-2xl font-display font-bold mb-8 text-gray-900 border-l-4 border-orange pl-4">
+            Veterinary Practitioners
+          </h3>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {associateDoctors.map((doc, index) => (
+              <motion.div
+                key={index}
+                className="group flex flex-col items-center text-center p-6 bg-gray-100 rounded-2xl hover:bg-black hover:text-white transition-colors duration-500 shadow-md border border-gray-200/60"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+              >
+                <div className="w-36 h-48 overflow-hidden rounded-xl relative shadow-sm mb-4">
+                  <div className="absolute inset-0 bg-orange/10 mix-blend-multiply z-10 group-hover:opacity-0 transition-opacity duration-500" />
+                  <img
+                    src={doc.image}
+                    alt={doc.name}
+                    className="w-full h-full object-cover object-top grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-xl font-display font-bold mb-1 group-hover:text-orange transition-colors">
+                    {doc.name}
+                  </h4>
+                  <p className="text-xs font-semibold text-orange group-hover:text-amber-400 uppercase tracking-wider">
+                    {doc.specialty}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );

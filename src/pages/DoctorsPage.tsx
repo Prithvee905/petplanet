@@ -5,8 +5,8 @@ export function DoctorsPage() {
   return (
     <>
       <Helmet>
-        <title>Meet Our Chief Veterinarian | Pet Planet Dog Clinic</title>
-        <meta name="description" content="Meet Dr. M. Kiran Kumar (17+ years veterinary & surgical experience) at Pet Planet Dog Clinic & Animal Diagnostics in Hyderabad." />
+        <title>Meet Our Veterinary Doctors | Pet Planet Dog Clinic</title>
+        <meta name="description" content="Meet Founder & Chief Veterinarian Dr. M. Kiran Kumar, Dr. Akhila, Dr. Manasa, and Dr. T. Kiranmayee at Pet Planet Dog Clinic & Animal Diagnostics in Hyderabad." />
       </Helmet>
       
       <div className="pt-24 bg-white">

@@ -15,7 +15,7 @@ const services = [
     icon: Syringe,
     title: 'Vaccinations & Automated Reminders',
     description: 'Core and lifestyle immunization protocols tailored for your pet. We send automated reminder notifications for your pet’s next scheduled vaccination date so they stay fully protected.',
-    image: 'https://images.unsplash.com/photo-1576201836106-db1758fd1c97?q=80&w=800&auto=format&fit=crop',
+    image: '/pet-vaccination.jpg',
   },
   {
     icon: ClipboardPlus,
@@ -33,7 +33,7 @@ const services = [
     icon: Microscope,
     title: 'Advanced Clinical Diagnostics',
     description: 'In-house diagnostic laboratory equipment, digital radiography (X-ray), and ultrasonography for immediate, accurate diagnostic evaluation.',
-    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop',
+    image: '/diagnostics-ultrasound.jpg',
   },
   {
     icon: Activity,
@@ -45,7 +45,7 @@ const services = [
     icon: HeartPulse,
     title: 'Dental & Oral Care',
     description: 'Professional ultrasonic scaling, oral prophylaxis, and comprehensive dental health treatments to prevent periodontal disease.',
-    image: 'https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?q=80&w=800&auto=format&fit=crop',
+    image: '/pet-dental.jpg',
   },
   {
     icon: Scissors,
@@ -63,7 +63,9 @@ const services = [
     icon: AlertCircle,
     title: 'Emergency Medical Services',
     description: 'Immediate medical triage and urgent critical care protocols for trauma, acute illness, and severe systemic emergencies.',
-    image: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=800&auto=format&fit=crop',
+    image: '/pet-emergency.jpg',
+    imagePosition: 'object-bottom',
+    imageStyle: { objectPosition: '50% 100%' },
   },
 ];
 
