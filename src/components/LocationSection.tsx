@@ -122,39 +122,69 @@ export function LocationSection() {
             </div>
           </motion.div>
 
-          {/* ── Map Panel ── */}
+          {/* ── Map & Storefront Panel ── */}
           <motion.div
-            className="h-64 sm:h-80 lg:h-auto relative"
+            className="flex flex-col h-full bg-black relative border-t lg:border-t-0 lg:border-l border-white/10 overflow-hidden"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            {/* Clickable overlay → opens Google Maps */}
-            <a
-              href={MAPS_DIRECTIONS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="absolute inset-0 z-10 flex items-end justify-center pb-4 group"
-              aria-label="Open in Google Maps"
-            >
-              <span className="bg-black/80 text-white text-xs font-semibold px-4 py-2 rounded-full flex items-center gap-2 shadow-lg group-hover:bg-orange transition-colors duration-300 backdrop-blur-sm">
-                <Navigation size={12} />
-                Open in Google Maps
-              </span>
-            </a>
+            {/* 🗺️ Interactive Google Map (Full Natural Colors + Red Location Pin) */}
+            <div className="h-64 sm:h-80 lg:h-full min-h-[280px] relative border-b border-white/10">
+              {/* Animated Red Location Pin Marker */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full z-20 pointer-events-none flex flex-col items-center">
+                <div className="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-2xl flex items-center gap-1.5 border-2 border-white animate-bounce">
+                  <MapPin size={14} className="fill-white text-red-600" />
+                  <span>Pet Planet Clinic</span>
+                </div>
+                <div className="w-3 h-3 bg-red-600 rotate-45 -mt-1.5 border-r-2 border-b-2 border-white" />
+              </div>
 
-            <iframe
-              src={MAPS_EMBED_URL}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen={false}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="absolute inset-0 grayscale contrast-110 hover:grayscale-0 transition-all duration-700"
-              title="Pet Planet Clinic Location"
-            />
+              {/* Clickable overlay → opens Google Maps */}
+              <a
+                href={MAPS_DIRECTIONS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute inset-0 z-10 flex items-end justify-center pb-4 group"
+                aria-label="Open in Google Maps"
+              >
+                <span className="bg-black/85 text-white text-xs font-semibold px-4 py-2 rounded-full flex items-center gap-2 shadow-lg group-hover:bg-orange transition-colors duration-300 backdrop-blur-sm border border-white/20">
+                  <Navigation size={12} className="text-orange" />
+                  Open in Google Maps
+                </span>
+              </a>
+
+              <iframe
+                src={MAPS_EMBED_URL}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 w-full h-full"
+                title="Pet Planet Clinic Location"
+              />
+            </div>
+
+            {/* 📸 Storefront Photo Preview (Top Side Banner Fully Visible) */}
+            <div className="relative h-60 sm:h-72 lg:h-80 w-full overflow-hidden group shrink-0">
+              <img
+                src="/clinic-storefront.jpg"
+                alt="Pet Planet Clinic Storefront & Building"
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white pointer-events-none">
+                <span className="text-xs font-bold bg-orange text-white px-3 py-1 rounded-full shadow-md flex items-center gap-1.5">
+                  🏥 Clinic Storefront & Main Entrance
+                </span>
+                <span className="text-xs text-gray-300 font-medium bg-black/60 px-2.5 py-1 rounded-full backdrop-blur-xs">
+                  Andal Homes, Kothapet
+                </span>
+              </div>
+            </div>
           </motion.div>
 
         </div>

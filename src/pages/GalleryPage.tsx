@@ -5,6 +5,12 @@ import { Camera } from 'lucide-react';
 
 const galleryItems = [
   {
+    title: 'Pet Planet Clinic Exterior & Storefront',
+    category: 'Facility',
+    image: '/clinic-storefront.jpg',
+    caption: 'Pet Planet Dog Clinic & Animal Diagnostics frontage at Andal Homes, Kothapet.',
+  },
+  {
     title: 'Modern Clinic Entrance & Reception',
     category: 'Facility',
     image: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=2070&auto=format&fit=crop',
