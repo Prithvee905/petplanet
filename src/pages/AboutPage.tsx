@@ -10,7 +10,7 @@ export function AboutPage() {
     <>
       <Helmet>
         <title>About Us | Pet Planet Dog Clinic & Animal Diagnostics</title>
-        <meta name="description" content="Learn about Pet Planet Dog Clinic & Animal Diagnostics in RK Puram, Hyderabad. 17+ years of compassionate veterinary care and clinical excellence led by Dr. M. Kiran Kumar." />
+        <meta name="description" content="Learn about Pet Planet Dog Clinic & Animal Diagnostics in RK Puram, Hyderabad. 23+ years of compassionate veterinary care and clinical excellence led by Dr. M. Kiran Kumar." />
       </Helmet>
 
       <div className="pt-28 pb-16 bg-black text-white relative overflow-hidden">

@@ -24,7 +24,7 @@ export function AboutSection() {
               About <span className="text-orange">Pet Planet.</span>
             </h2>
             <p className="text-lg text-gray-800 mb-4 font-body leading-relaxed">
-              Founded over 16 years ago, <strong className="font-bold text-black">Pet Planet</strong> began as a small veterinary clinic with a simple vision—to provide genuine, compassionate care for every pet. What started as a modest practice has now grown into a trusted destination for pet healthcare.
+              Founded over 17 years ago, <strong className="font-bold text-black">Pet Planet</strong> began as a small veterinary clinic with a simple vision—to provide genuine, compassionate care for every pet. What started as a modest practice has now grown into a trusted destination for pet healthcare.
             </p>
             <p className="text-lg text-gray-800 mb-4 font-body leading-relaxed">
               Over the years, we have continually expanded our services to meet the evolving needs of pets and their families. Today, <strong className="font-bold text-black">Pet Planet</strong> offers a wide range of services—all under one roof.

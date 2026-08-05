@@ -4,23 +4,26 @@ import { Doodle } from './Doodle';
 const founderDoctor = {
   name: 'Dr. M. Kiran Kumar',
   specialty: 'Founder & Chief Veterinarian',
-  bio: 'With over 17 years of hands-on experience, Dr. Kiran is a highly experienced small-animal veterinarian. He expertly handles both routine preventive care and complex surgical cases, including tumor removals, all while maintaining a calm, trusted bedside manner that puts pets and parents at ease.',
+  bio: 'With over 23 years of hands-on experience, Dr. Kiran is a highly experienced small-animal veterinarian. He expertly handles both routine preventive care and complex surgical cases, including tumor removals, all while maintaining a calm, trusted bedside manner that puts pets and parents at ease.',
   image: '/dr-kiran.jpg',
 };
 
 const associateDoctors = [
   {
     name: 'Dr. Akhila',
+    qualification: 'M.V.Sc',
     specialty: 'Veterinarian',
     image: '/dr-akhila.jpg',
   },
   {
     name: 'Dr. Manasa',
+    qualification: 'M.V.Sc',
     specialty: 'Veterinarian',
     image: '/dr-manasa.jpg',
   },
   {
     name: 'Dr. T. Kiranmayee',
+    qualification: 'B.V.Sc',
     specialty: 'Veterinarian',
     image: '/dr-kiranmayee.jpg',
   },
@@ -104,6 +107,9 @@ export function DoctorsSection() {
                   </h4>
                   <p className="text-xs font-semibold text-orange group-hover:text-amber-400 uppercase tracking-wider">
                     {doc.specialty}
+                  </p>
+                  <p className="text-xs font-bold text-gray-600 group-hover:text-gray-300 mt-1">
+                    {doc.qualification}
                   </p>
                 </div>
               </motion.div>

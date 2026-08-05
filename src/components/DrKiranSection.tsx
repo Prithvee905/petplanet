@@ -56,7 +56,7 @@ export function DrKiranSection() {
                 <div className="bg-black/80 backdrop-blur-sm border border-orange/30 rounded-xl px-5 py-4">
                   <p className="font-display font-bold text-white text-lg">Dr. M. Kiran Kumar</p>
                   <p className="text-orange text-sm font-medium">Founder &amp; Chief Veterinarian</p>
-                  <p className="text-gray-400 text-xs mt-1">17+ Years of Veterinary Excellence</p>
+                  <p className="text-gray-400 text-xs mt-1">23+ Years of Veterinary Excellence</p>
                 </div>
               </div>
             </div>
@@ -77,7 +77,7 @@ export function DrKiranSection() {
             </div>
 
             <p className="text-gray-300 text-lg leading-relaxed mb-5 font-body">
-              Dr. M. Kiran Kumar, Founder of <strong className="text-white font-bold">Pet Planet</strong>, began his veterinary career serving in large animal practice. While this experience provided him with a strong clinical foundation, his passion and compassion for companion animals inspired him to establish <strong className="text-white font-bold">Pet Planet</strong> over 16 years ago with a vision of providing high-quality healthcare for pets.
+              Dr. M. Kiran Kumar, Founder of <strong className="text-white font-bold">Pet Planet</strong>, began his veterinary career serving in large animal practice. While this experience provided him with a strong clinical foundation, his passion and compassion for companion animals inspired him to establish <strong className="text-white font-bold">Pet Planet</strong> over 17 years ago with a vision of providing high-quality healthcare for pets.
             </p>
             <p className="text-gray-300 text-lg leading-relaxed mb-5 font-body">
               From its very beginning, Dr. Kiran Kumar has devoted his time, energy, and unwavering commitment to building <strong className="text-white font-bold">Pet Planet</strong> into the trusted veterinary centre it is today.
@@ -90,7 +90,7 @@ export function DrKiranSection() {
             <div className="grid grid-cols-3 gap-4 mt-10">
               {[
                 { number: '2009', label: 'Est. Year' },
-                { number: '17+', label: 'Years Experience' },
+                { number: '23+', label: 'Years Experience' },
                 { number: '1800+', label: 'Pet Families' },
               ].map((s, i) => (
                 <motion.div

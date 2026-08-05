@@ -14,7 +14,7 @@ export function Home({ onBookClick }: HomeProps) {
     <>
       <Helmet>
         <title>Pet Planet Dog Clinic & Animal Diagnostics | Hyderabad</title>
-        <meta name="description" content="17+ years of clinical excellence, major & minor surgeries, automated vaccination reminders, and advanced animal diagnostics at Andal Homes in RK Puram, Hyderabad." />
+        <meta name="description" content="23+ years of clinical excellence, major & minor surgeries, automated vaccination reminders, and advanced animal diagnostics at Andal Homes in RK Puram, Hyderabad." />
       </Helmet>
       
       <HeroSection onBookClick={onBookClick} />
