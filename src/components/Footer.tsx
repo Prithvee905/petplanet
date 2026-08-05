@@ -10,7 +10,7 @@ export function Footer() {
               <img 
                 src="/logo-white.png" 
                 alt="Pet Planet Logo" 
-                className="h-16 md:h-20 w-auto object-contain rounded-xl group-hover:scale-105 transition-transform duration-300 drop-shadow-md"
+                className="h-10 md:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-md"
               />
             </Link>
             <p className="text-gray-400 max-w-sm mb-4 leading-relaxed font-body">

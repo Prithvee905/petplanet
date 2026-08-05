@@ -11,17 +11,17 @@ const founderDoctor = {
 const associateDoctors = [
   {
     name: 'Dr. Akhila',
-    specialty: 'Veterinary Practitioner',
+    specialty: 'Veterinarian',
     image: '/dr-akhila.jpg',
   },
   {
     name: 'Dr. Manasa',
-    specialty: 'Veterinary Practitioner',
+    specialty: 'Veterinarian',
     image: '/dr-manasa.jpg',
   },
   {
     name: 'Dr. T. Kiranmayee',
-    specialty: 'Veterinary Practitioner',
+    specialty: 'Veterinarian',
     image: '/dr-kiranmayee.jpg',
   },
 ];
@@ -77,7 +77,7 @@ export function DoctorsSection() {
         {/* 🩺 2. Associate Doctors Grid (Clean Cards - Name & Specialty Only) */}
         <div className="max-w-5xl mx-auto">
           <h3 className="text-2xl font-display font-bold mb-8 text-gray-900 border-l-4 border-orange pl-4">
-            Veterinary Practitioners
+            Veterinarians
           </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

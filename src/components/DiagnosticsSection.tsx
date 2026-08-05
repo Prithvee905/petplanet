@@ -85,27 +85,30 @@ export function DiagnosticsSection() {
             </ul>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {diagnosticsShowcase.map((item, index) => (
               <motion.div
                 key={item.title}
-                className={`group relative overflow-hidden rounded-[28px] border border-white/10 bg-white/5 shadow-[0_24px_80px_rgba(0,0,0,0.35)] aspect-[4/3] ${item.className}`}
+                className={`group flex flex-col overflow-hidden rounded-2xl border border-white/15 bg-zinc-900 shadow-xl hover:border-orange/50 transition-all duration-300 ${item.className}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.55, delay: index * 0.08 }}
               >
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className={`h-full w-full ${item.imageClassName} object-cover transition-transform duration-700 group-hover:scale-105`}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4">
-                  <div className="max-w-md rounded-xl border border-white/10 bg-black/50 p-2.5 sm:p-3 backdrop-blur-md">
-                    <h3 className="text-sm sm:text-base font-display font-bold text-white">{item.title}</h3>
-                    <p className="mt-0.5 text-xs sm:text-[13px] leading-normal text-gray-200">{item.description}</p>
-                  </div>
+                {/* Photo Container */}
+                <div className="relative w-full h-52 sm:h-60 overflow-hidden bg-black">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className={`h-full w-full ${item.imageClassName} object-cover transition-transform duration-700 group-hover:scale-105`}
+                  />
+                </div>
+
+                {/* Test Name Below Photo */}
+                <div className="p-3.5 sm:p-4 bg-zinc-900 border-t border-white/10 text-center sm:text-left">
+                  <h3 className="text-base sm:text-lg font-display font-bold text-white group-hover:text-orange transition-colors">
+                    {item.title}
+                  </h3>
                 </div>
               </motion.div>
             ))}
