@@ -39,10 +39,10 @@ export function AboutSection() {
 
           <div className="grid grid-cols-2 gap-6">
             {[
+              { number: '2009', label: 'Est. Year' },
               { number: '17+', label: 'Years Clinic Excellence' },
-              { number: '4.7', label: 'Average Client Rating' },
+              { number: '4.7 ★', label: 'Average Client Rating' },
               { number: '1,800+', label: 'Happy Pet Patient Reviews' },
-              { number: '✓', label: 'Certified & Verified' },
             ].map((stat, i) => (
               <motion.div
                 key={i}

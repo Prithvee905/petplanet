@@ -87,9 +87,8 @@ export function DrKiranSection() {
             </p>
 
             {/* Highlights */}
-            <div className="grid grid-cols-3 gap-4 mt-10">
+            <div className="grid grid-cols-2 gap-4 mt-10">
               {[
-                { number: '2009', label: 'Est. Year' },
                 { number: '23+', label: 'Years Experience' },
                 { number: '1800+', label: 'Pet Families' },
               ].map((s, i) => (
