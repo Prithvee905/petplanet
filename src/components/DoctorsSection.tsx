@@ -153,7 +153,7 @@ export function DoctorsSection() {
           </div>
 
           <motion.div
-            className="group relative overflow-hidden rounded-3xl bg-gray-900 shadow-2xl border border-gray-200/80"
+            className="group relative overflow-hidden rounded-3xl bg-white shadow-xl border border-gray-200/80 flex flex-col"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -165,17 +165,14 @@ export function DoctorsSection() {
                 alt="Pet Planet Complete Clinical & Support Team"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 text-white">
-                <div className="bg-black/65 backdrop-blur-md border border-white/15 rounded-2xl p-4 sm:p-5 max-w-xl">
-                  <h4 className="text-xl sm:text-2xl font-display font-bold text-white mb-1">
-                    Pet Planet Clinical &amp; Staff Family
-                  </h4>
-                  <p className="text-xs sm:text-sm text-gray-300">
-                    Our dedicated team of veterinarians, veterinary nurses, lab technicians, and care assistants working together to deliver excellence for every pet.
-                  </p>
-                </div>
-              </div>
+            </div>
+            <div className="p-4 sm:p-5 bg-gray-50 border-t border-gray-200/80">
+              <h4 className="text-base sm:text-lg font-display font-bold text-gray-900 mb-1">
+                Pet Planet Clinical &amp; Staff Family
+              </h4>
+              <p className="text-xs sm:text-sm text-gray-600">
+                Our dedicated team of veterinarians, veterinary nurses, lab technicians, and care assistants working together to deliver excellence for every pet.
+              </p>
             </div>
           </motion.div>
         </div>
