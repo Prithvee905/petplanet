@@ -8,15 +8,14 @@ const founderDoctor = {
   image: '/dr-kiran.jpg',
 };
 
-const seniorSurgeon = {
-  name: 'Dr. G. Shambhulingam',
-  qualification: 'M.V.Sc',
-  specialty: 'Veterinary Surgeon',
-  experience: '35+ Years of Surgical Experience',
-  image: '/dr-shambhulingam.jpg',
-};
-
 const associateDoctors = [
+  {
+    name: 'Dr. G. Shambhulingam',
+    qualification: 'M.V.Sc',
+    specialty: 'Veterinary Surgeon',
+    experience: '35+ Years Experience',
+    image: '/dr-shambhulingam.jpg',
+  },
   {
     name: 'Dr. Akhila',
     qualification: 'M.V.Sc',
@@ -59,7 +58,7 @@ export function DoctorsSection() {
         </motion.div>
 
         {/* 🌟 1. Founder Card (BIGGEST Hero Card with Bio) */}
-        <div className="max-w-5xl mx-auto mb-12">
+        <div className="max-w-5xl mx-auto mb-16">
           <motion.div
             className="group flex flex-col md:flex-row gap-8 items-center bg-gray-100 p-8 sm:p-10 rounded-3xl hover:bg-black hover:text-white transition-colors duration-500 shadow-2xl border border-gray-200/80"
             initial={{ opacity: 0, y: 50 }}
@@ -92,50 +91,13 @@ export function DoctorsSection() {
           </motion.div>
         </div>
 
-        {/* 🩺 2. Senior Veterinary Surgeon Card (Dr. G. Shambhulingam - Left Aligned, Compact Photo) */}
-        <div className="max-w-5xl mx-auto mb-16">
-          <motion.div
-            className="group inline-flex flex-col items-start text-left p-6 sm:p-7 bg-gray-100 rounded-3xl hover:bg-black hover:text-white transition-colors duration-500 shadow-xl border border-gray-200/80 max-w-sm"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <div className="w-40 h-52 sm:w-44 sm:h-56 overflow-hidden rounded-2xl relative shadow-md mb-5">
-              <div className="absolute inset-0 bg-orange/10 mix-blend-multiply z-10 group-hover:opacity-0 transition-opacity duration-500" />
-              <img
-                src={seniorSurgeon.image}
-                alt={seniorSurgeon.name}
-                className="w-full h-full object-cover object-top grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-              />
-            </div>
-            <div>
-              <span className="inline-block text-[11px] font-bold uppercase tracking-widest text-orange bg-orange/10 px-2.5 py-1 rounded-full mb-2">
-                Senior Veterinary Surgeon
-              </span>
-              <h3 className="text-xl sm:text-2xl font-display font-bold mb-1 group-hover:text-orange transition-colors">
-                {seniorSurgeon.name}
-              </h3>
-              <p className="text-xs font-semibold text-orange group-hover:text-amber-400 uppercase tracking-wider mb-2">
-                {seniorSurgeon.specialty}
-              </p>
-              <div className="inline-block bg-gray-200 group-hover:bg-white/10 px-2.5 py-0.5 rounded-full text-xs font-bold text-gray-700 group-hover:text-gray-200 mb-2">
-                {seniorSurgeon.qualification}
-              </div>
-              <p className="text-xs font-semibold text-gray-600 group-hover:text-gray-300">
-                ({seniorSurgeon.experience})
-              </p>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* 🩺 3. Veterinarians Grid (3 Associate Lady Doctors) */}
-        <div className="max-w-5xl mx-auto">
+        {/* 🩺 2. Doctors Team Grid (4 Doctors: Dr. G. Shambhulingam first, followed by Dr. Akhila, Dr. Manasa, Dr. T. Kiranmayee) */}
+        <div className="max-w-6xl mx-auto">
           <h3 className="text-2xl font-display font-bold mb-8 text-gray-900 border-l-4 border-orange pl-4">
-            Veterinarians
+            Veterinary Surgeons &amp; Doctors
           </h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
             {associateDoctors.map((doc, index) => (
               <motion.div
                 key={index}
@@ -143,7 +105,7 @@ export function DoctorsSection() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.12 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <div className="w-36 h-48 overflow-hidden rounded-xl relative shadow-sm mb-4">
                   <div className="absolute inset-0 bg-orange/10 mix-blend-multiply z-10 group-hover:opacity-0 transition-opacity duration-500" />
@@ -163,6 +125,11 @@ export function DoctorsSection() {
                   <div className="inline-block bg-gray-200 group-hover:bg-white/10 px-2.5 py-0.5 rounded-full text-xs font-bold text-gray-700 group-hover:text-gray-200">
                     {doc.qualification}
                   </div>
+                  {doc.experience && (
+                    <p className="text-[11px] font-medium text-gray-500 group-hover:text-gray-400 mt-2">
+                      ({doc.experience})
+                    </p>
+                  )}
                 </div>
               </motion.div>
             ))}
