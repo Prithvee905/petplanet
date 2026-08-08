@@ -136,6 +136,50 @@ export function DoctorsSection() {
           </div>
         </div>
 
+        {/* 🏥 3. Complete Clinical & Support Team Section */}
+        <div className="max-w-6xl mx-auto mt-20">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 border-l-4 border-orange pl-4 gap-2">
+            <div>
+              <h3 className="text-2xl sm:text-3xl font-display font-bold text-gray-900">
+                Our Complete Team
+              </h3>
+              <p className="text-gray-600 text-sm mt-1">
+                The compassionate veterinary doctors, clinical staff, and support team behind Pet Planet.
+              </p>
+            </div>
+            <span className="inline-block self-start sm:self-auto bg-orange/10 text-orange border border-orange/30 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+              Clinical &amp; Support Staff
+            </span>
+          </div>
+
+          <motion.div
+            className="group relative overflow-hidden rounded-3xl bg-gray-900 shadow-2xl border border-gray-200/80"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="relative h-72 sm:h-96 md:h-[460px] w-full overflow-hidden bg-black">
+              <img
+                src="/pet-planet-complete-team.jpg"
+                alt="Pet Planet Complete Clinical & Support Team"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6 text-white">
+                <div className="bg-black/65 backdrop-blur-md border border-white/15 rounded-2xl p-4 sm:p-5 max-w-xl">
+                  <h4 className="text-xl sm:text-2xl font-display font-bold text-white mb-1">
+                    Pet Planet Clinical &amp; Staff Family
+                  </h4>
+                  <p className="text-xs sm:text-sm text-gray-300">
+                    Our dedicated team of veterinarians, veterinary nurses, lab technicians, and care assistants working together to deliver excellence for every pet.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
       </div>
     </section>
   );

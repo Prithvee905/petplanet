@@ -5,10 +5,22 @@ import { Camera } from 'lucide-react';
 
 const galleryItems = [
   {
-    title: 'Pet Planet Clinic Storefront & Frontage',
+    title: 'Pet Planet Clinic Frontage & Storefront',
     category: 'Clinic Frontside',
     image: '/clinic-storefront.jpg',
     imagePosition: 'object-top',
+  },
+  {
+    title: 'Andal Homes Clinic Building Exterior',
+    category: 'Clinic Frontside',
+    image: '/gallery-building-exterior-full.jpg',
+    imagePosition: 'object-bottom',
+  },
+  {
+    title: 'Decorated Clinic Exterior & Entrance',
+    category: 'Clinic Frontside',
+    image: '/gallery-clinic-exterior-decorated.jpg',
+    imagePosition: 'object-center',
   },
   {
     title: 'Dr. Kiran & Surgical Team in Operation Theatre',
@@ -20,6 +32,48 @@ const galleryItems = [
     title: 'Dr. Kiran Performing Diagnostic Ultrasound Scan',
     category: 'Diagnostics',
     image: '/gallery-ultrasound-live.jpg',
+    imagePosition: 'object-center',
+  },
+  {
+    title: 'Clinical & Nursing Staff Group',
+    category: 'Staff & Team',
+    image: '/gallery-clinical-staff-group.jpg',
+    imagePosition: 'object-center',
+  },
+  {
+    title: 'Grand Inauguration & Ribbon Cutting Ceremony',
+    category: 'Inauguration',
+    image: '/gallery-inauguration-ribbon.jpg',
+    imagePosition: 'object-center',
+  },
+  {
+    title: 'Honoured Guests Presentation at Inauguration',
+    category: 'Inauguration',
+    image: '/gallery-inauguration-guests.jpg',
+    imagePosition: 'object-center',
+  },
+  {
+    title: 'Dr. Shambhulingam & Dr. Kiran Inauguration Speech',
+    category: 'Inauguration',
+    image: '/gallery-inauguration-speech.jpg',
+    imagePosition: 'object-center',
+  },
+  {
+    title: 'Complete Clinical Team on Stage',
+    category: 'Inauguration',
+    image: '/gallery-inauguration-team.jpg',
+    imagePosition: 'object-center',
+  },
+  {
+    title: 'Pet Planet Wall Art & Mascot Plaques',
+    category: 'Facility Decor',
+    image: '/gallery-wall-art-plaques.jpg',
+    imagePosition: 'object-center',
+  },
+  {
+    title: 'Floral Reception Desk & Welcome Counter',
+    category: 'Facility',
+    image: '/gallery-reception-flowers.jpg',
     imagePosition: 'object-center',
   },
   {
@@ -77,7 +131,7 @@ export function GalleryPage() {
     <>
       <Helmet>
         <title>Clinic Photo Gallery | Pet Planet Dog Clinic & Diagnostics</title>
-        <meta name="description" content="Explore real clinic photos of Pet Planet Dog Clinic & Animal Diagnostics in Andal Homes, Kothapet, Hyderabad. Visual tour of our surgeries, ultrasound, grooming, and patient care." />
+        <meta name="description" content="Explore real clinic photos of Pet Planet Dog Clinic & Animal Diagnostics in Andal Homes, Kothapet, Hyderabad. Visual tour of our surgeries, inauguration, ultrasound, grooming, and patient care." />
       </Helmet>
 
       <div className="pt-28 pb-16 min-h-[420px] md:min-h-[520px] bg-black text-white relative overflow-hidden flex items-center">
@@ -109,7 +163,7 @@ export function GalleryPage() {
               Clinic <span className="text-orange">Gallery .</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto font-body leading-relaxed">
-              Explore authentic photos of our clinic facilities, surgical operating theatre, live ultrasound diagnostic procedures, grooming station, and in-patient care.
+              Explore authentic photos of our clinic facilities, grand inauguration ceremony, surgical operating theatre, live ultrasound diagnostic procedures, grooming station, and in-patient care.
             </p>
           </motion.div>
         </div>
@@ -126,7 +180,7 @@ export function GalleryPage() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.08 }}
+                transition={{ duration: 0.5, delay: index * 0.04 }}
               >
                 <div className="relative h-72 sm:h-80 md:h-96 overflow-hidden bg-black">
                   <img
