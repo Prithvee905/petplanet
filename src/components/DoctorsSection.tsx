@@ -1,24 +1,20 @@
 import { motion } from 'framer-motion';
 import { Doodle } from './Doodle';
 
-const seniorDoctors = [
-  {
-    name: 'Dr. M. Kiran Kumar',
-    qualification: 'B.V.Sc & A.H.',
-    specialty: 'Founder & Chief Veterinarian',
-    bio: 'With over 23 years of hands-on clinical experience, Dr. Kiran is a highly experienced small-animal veterinarian. He expertly handles preventive care, internal medicine, and complex surgical cases, maintaining a trusted bedside manner that puts pets and parents at ease.',
-    image: '/dr-kiran.jpg',
-    experience: '23+ Years Experience',
-  },
-  {
-    name: 'Dr. G. Shambhulingam',
-    qualification: 'M.V.Sc',
-    specialty: 'Veterinary Surgeon',
-    bio: 'Senior Veterinary Surgeon with over 35+ years of dedicated surgical experience. Specializing in advanced orthopedic, soft-tissue, and emergency procedures delivered with high precision and compassionate care.',
-    image: '/dr-shambhulingam.jpg',
-    experience: '35+ Years Experience',
-  },
-];
+const founderDoctor = {
+  name: 'Dr. M. Kiran Kumar',
+  specialty: 'Founder & Chief Veterinarian',
+  bio: 'With over 23 years of hands-on experience, Dr. Kiran is a highly experienced small-animal veterinarian. He expertly handles both routine preventive care and complex surgical cases, including tumor removals, all while maintaining a calm, trusted bedside manner that puts pets and parents at ease.',
+  image: '/dr-kiran.jpg',
+};
+
+const seniorSurgeon = {
+  name: 'Dr. G. Shambhulingam',
+  qualification: 'M.V.Sc',
+  specialty: 'Veterinary Surgeon',
+  experience: '35+ Years of Surgical Experience',
+  image: '/dr-shambhulingam.jpg',
+};
 
 const associateDoctors = [
   {
@@ -47,7 +43,7 @@ export function DoctorsSection() {
       {/* Decorative Doodles */}
       <Doodle type="bone" className="top-12 right-10 w-24 h-24 rotate-[30deg] text-orange/20" />
       <Doodle type="sparkle" className="bottom-8 left-10 w-16 h-16 text-orange/30" />
-
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="mb-12 text-center sm:text-left"
@@ -62,47 +58,84 @@ export function DoctorsSection() {
           </p>
         </motion.div>
 
-        {/* 🌟 1. Senior Doctors Featured Cards (Dr. Kiran & Dr. Shambhulingam) */}
-        <div className="max-w-6xl mx-auto mb-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {seniorDoctors.map((doc, index) => (
-            <motion.div
-              key={index}
-              className="group flex flex-col sm:flex-row gap-6 items-center bg-gray-100 p-6 sm:p-8 rounded-2xl hover:bg-black hover:text-white transition-colors duration-500 shadow-xl border border-gray-200/80"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-            >
-              <div className="w-48 h-60 sm:w-52 sm:h-64 flex-shrink-0 overflow-hidden rounded-xl relative shadow-md">
-                <div className="absolute inset-0 bg-orange/10 mix-blend-multiply z-10 group-hover:opacity-0 transition-opacity duration-500" />
-                <img
-                  src={doc.image}
-                  alt={doc.name}
-                  className="w-full h-full object-cover object-top grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                />
-                <span className="absolute top-2 left-2 bg-orange text-white text-[10px] font-bold px-2 py-0.5 rounded-full z-20 shadow-sm">
-                  {doc.experience}
-                </span>
-              </div>
-              <div className="flex-1">
-                <h3 className="text-2xl sm:text-3xl font-display font-bold mb-1 group-hover:text-orange transition-colors">{doc.name}</h3>
-                <p className="text-xs font-bold text-gray-700 group-hover:text-gray-300 mb-1">{doc.qualification}</p>
-                <p className="text-xs font-semibold text-orange group-hover:text-amber-400 mb-3 uppercase tracking-wider">{doc.specialty}</p>
-                <p className="text-gray-800 group-hover:text-gray-200 leading-relaxed text-sm">
-                  {doc.bio}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+        {/* 🌟 1. Founder Card (BIGGEST Hero Card with Bio) */}
+        <div className="max-w-5xl mx-auto mb-12">
+          <motion.div
+            className="group flex flex-col md:flex-row gap-8 items-center bg-gray-100 p-8 sm:p-10 rounded-3xl hover:bg-black hover:text-white transition-colors duration-500 shadow-2xl border border-gray-200/80"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="w-64 h-72 sm:w-80 sm:h-96 flex-shrink-0 overflow-hidden rounded-2xl relative shadow-lg">
+              <div className="absolute inset-0 bg-orange/10 mix-blend-multiply z-10 group-hover:opacity-0 transition-opacity duration-500" />
+              <img
+                src={founderDoctor.image}
+                alt={founderDoctor.name}
+                className="w-full h-full object-cover object-top grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+              />
+            </div>
+            <div>
+              <span className="inline-block text-xs font-bold uppercase tracking-widest text-orange bg-orange/10 px-3 py-1 rounded-full mb-3">
+                Founder &amp; Chief Veterinarian
+              </span>
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold mb-2 group-hover:text-orange transition-colors">
+                {founderDoctor.name}
+              </h3>
+              <p className="text-base font-semibold text-orange group-hover:text-amber-400 mb-4 uppercase tracking-wider">
+                {founderDoctor.specialty}
+              </p>
+              <p className="text-gray-800 group-hover:text-gray-200 leading-relaxed text-base sm:text-lg">
+                {founderDoctor.bio}
+              </p>
+            </div>
+          </motion.div>
         </div>
 
-        {/* 🩺 2. Associate Doctors Grid */}
-        <div className="max-w-6xl mx-auto">
+        {/* 🩺 2. Senior Veterinary Surgeon Card (Dr. G. Shambhulingam - Left Aligned, Compact Photo) */}
+        <div className="max-w-5xl mx-auto mb-16">
+          <motion.div
+            className="group inline-flex flex-col items-start text-left p-6 sm:p-7 bg-gray-100 rounded-3xl hover:bg-black hover:text-white transition-colors duration-500 shadow-xl border border-gray-200/80 max-w-sm"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <div className="w-40 h-52 sm:w-44 sm:h-56 overflow-hidden rounded-2xl relative shadow-md mb-5">
+              <div className="absolute inset-0 bg-orange/10 mix-blend-multiply z-10 group-hover:opacity-0 transition-opacity duration-500" />
+              <img
+                src={seniorSurgeon.image}
+                alt={seniorSurgeon.name}
+                className="w-full h-full object-cover object-top grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+              />
+            </div>
+            <div>
+              <span className="inline-block text-[11px] font-bold uppercase tracking-widest text-orange bg-orange/10 px-2.5 py-1 rounded-full mb-2">
+                Senior Veterinary Surgeon
+              </span>
+              <h3 className="text-xl sm:text-2xl font-display font-bold mb-1 group-hover:text-orange transition-colors">
+                {seniorSurgeon.name}
+              </h3>
+              <p className="text-xs font-semibold text-orange group-hover:text-amber-400 uppercase tracking-wider mb-2">
+                {seniorSurgeon.specialty}
+              </p>
+              <div className="inline-block bg-gray-200 group-hover:bg-white/10 px-2.5 py-0.5 rounded-full text-xs font-bold text-gray-700 group-hover:text-gray-200 mb-2">
+                {seniorSurgeon.qualification}
+              </div>
+              <p className="text-xs font-semibold text-gray-600 group-hover:text-gray-300">
+                ({seniorSurgeon.experience})
+              </p>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* 🩺 3. Veterinarians Grid (3 Associate Lady Doctors) */}
+        <div className="max-w-5xl mx-auto">
           <h3 className="text-2xl font-display font-bold mb-8 text-gray-900 border-l-4 border-orange pl-4">
             Veterinarians
           </h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {associateDoctors.map((doc, index) => (
               <motion.div
                 key={index}
@@ -110,7 +143,7 @@ export function DoctorsSection() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
+                transition={{ duration: 0.5, delay: index * 0.12 }}
               >
                 <div className="w-36 h-48 overflow-hidden rounded-xl relative shadow-sm mb-4">
                   <div className="absolute inset-0 bg-orange/10 mix-blend-multiply z-10 group-hover:opacity-0 transition-opacity duration-500" />
@@ -121,15 +154,15 @@ export function DoctorsSection() {
                   />
                 </div>
                 <div>
-                  <h4 className="text-xl font-display font-bold mb-1 group-hover:text-orange transition-colors">
+                  <h4 className="text-lg font-display font-bold mb-1 group-hover:text-orange transition-colors">
                     {doc.name}
                   </h4>
-                  <p className="text-xs font-semibold text-orange group-hover:text-amber-400 uppercase tracking-wider">
+                  <p className="text-xs font-semibold text-orange group-hover:text-amber-400 uppercase tracking-wider mb-1">
                     {doc.specialty}
                   </p>
-                  <p className="text-xs font-bold text-gray-600 group-hover:text-gray-300 mt-1">
+                  <div className="inline-block bg-gray-200 group-hover:bg-white/10 px-2.5 py-0.5 rounded-full text-xs font-bold text-gray-700 group-hover:text-gray-200">
                     {doc.qualification}
-                  </p>
+                  </div>
                 </div>
               </motion.div>
             ))}
