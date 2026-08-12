@@ -71,6 +71,13 @@ const galleryItems = [
     imagePosition: 'object-center',
   },
   {
+    title: 'Happy Shih Tzu Patient',
+    category: 'Happy Pets',
+    image: '/shih-tzu-gallery-video.mp4',
+    isVideo: true,
+    imagePosition: 'object-center',
+  },
+  {
     title: 'Floral Reception Desk & Welcome Counter',
     category: 'Facility',
     image: '/gallery-reception-flowers.jpg',
@@ -183,11 +190,22 @@ export function GalleryPage() {
                 transition={{ duration: 0.5, delay: index * 0.04 }}
               >
                 <div className="relative h-72 sm:h-80 md:h-96 overflow-hidden bg-black">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className={`w-full h-full object-cover ${item.imagePosition || 'object-bottom'} group-hover:scale-105 transition-transform duration-700`}
-                  />
+                  {item.isVideo ? (
+                    <video
+                      src={item.image}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className={`w-full h-full object-cover ${item.imagePosition || 'object-center'} group-hover:scale-105 transition-transform duration-700`}
+                    />
+                  ) : (
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className={`w-full h-full object-cover ${item.imagePosition || 'object-bottom'} group-hover:scale-105 transition-transform duration-700`}
+                    />
+                  )}
                   <div className="absolute top-3 right-3 bg-black/70 backdrop-blur-xs text-white text-[11px] font-semibold px-2.5 py-1 rounded-full border border-white/20">
                     {item.category}
                   </div>
