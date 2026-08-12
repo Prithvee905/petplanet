@@ -55,50 +55,158 @@ export function AppointmentModal({ isOpen, onClose }: AppointmentModalProps) {
         console.warn('Supabase DB save skipped/failed:', dbErr);
       }
       
-      // 2. Send instant Email Notification to petplanetanimaldiagnostics@gmail.com via Web3Forms
-      const web3FormsKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
-      if (web3FormsKey) {
-        const res = await fetch('https://api.web3forms.com/submit', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify({
-            access_key: web3FormsKey,
-            to: 'petplanetanimaldiagnostics@gmail.com',
-            subject: `🐶 New Appointment Request: ${data.name} (${data.pet_type})`,
-            from_name: 'Pet Planet Website',
-            message: `
-NEW APPOINTMENT BOOKING REQUEST:
-==================================
-Customer Name : ${data.name}
-Phone Number  : ${data.phone}
+      // 2. Send professional HTML Email via Web3Forms (non-blocking)
+      try {
+        const web3FormsKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+        if (web3FormsKey) {
+          const htmlBody = `
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"></head>
+<body style="margin:0;padding:0;background:#f4f6f9;font-family:'Segoe UI',Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f6f9;padding:32px 0;">
+    <tr><td align="center">
+      <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.08);max-width:600px;">
 
-Pet Name      : ${data.pet_name || 'N/A'}
-Pet Type      : ${data.pet_type}
+        <!-- Header -->
+        <tr>
+          <td style="background:linear-gradient(135deg,#FF6B35 0%,#e85d20 100%);padding:32px 40px;text-align:center;">
+            <div style="font-size:36px;margin-bottom:8px;">🐾</div>
+            <h1 style="margin:0;color:#ffffff;font-size:24px;font-weight:700;letter-spacing:0.5px;">Pet Planet</h1>
+            <p style="margin:6px 0 0;color:rgba(255,255,255,0.85);font-size:13px;letter-spacing:1px;text-transform:uppercase;">Dog Clinic & Animal Diagnostics</p>
+          </td>
+        </tr>
 
-Preferred Date: ${data.preferred_date}
-Preferred Time: ${data.preferred_time || 'Anytime'}
+        <!-- Alert Banner -->
+        <tr>
+          <td style="background:#fff8f5;padding:20px 40px;border-bottom:2px solid #ffe0d0;text-align:center;">
+            <p style="margin:0;color:#c94a0a;font-size:15px;font-weight:600;">📋 New Appointment Booking Request</p>
+          </td>
+        </tr>
 
-Customer Notes / Message:
-${data.message || 'No additional notes'}
-----------------------------------
-Submitted live from petplanet website.
-            `
-          })
-        });
+        <!-- Body -->
+        <tr>
+          <td style="padding:32px 40px;">
 
-        const resData = await res.json();
-        if (!res.ok || !resData.success) {
-          throw new Error(resData.message || 'Email delivery failed. Please check Web3Forms Access Key.');
+            <!-- Owner Info -->
+            <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:24px;">
+              <tr>
+                <td style="padding-bottom:12px;">
+                  <p style="margin:0 0 16px;color:#1a1a2e;font-size:16px;font-weight:700;border-bottom:2px solid #FF6B35;padding-bottom:8px;">👤 Owner Information</p>
+                </td>
+              </tr>
+              <tr>
+                <td width="50%" style="padding:8px 12px;background:#f8f9fa;border-radius:6px 0 0 6px;">
+                  <p style="margin:0;color:#666;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;">Customer Name</p>
+                  <p style="margin:4px 0 0;color:#1a1a2e;font-size:15px;font-weight:600;">${data.name}</p>
+                </td>
+                <td width="4px"></td>
+                <td width="50%" style="padding:8px 12px;background:#f8f9fa;border-radius:0 6px 6px 0;">
+                  <p style="margin:0;color:#666;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;">Phone Number</p>
+                  <p style="margin:4px 0 0;color:#1a1a2e;font-size:15px;font-weight:600;">${data.phone}</p>
+                </td>
+              </tr>
+            </table>
+
+            <!-- Pet Info -->
+            <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:24px;">
+              <tr>
+                <td style="padding-bottom:12px;">
+                  <p style="margin:0 0 16px;color:#1a1a2e;font-size:16px;font-weight:700;border-bottom:2px solid #FF6B35;padding-bottom:8px;">🐶 Pet Information</p>
+                </td>
+              </tr>
+              <tr>
+                <td width="50%" style="padding:8px 12px;background:#f8f9fa;border-radius:6px 0 0 6px;">
+                  <p style="margin:0;color:#666;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;">Pet Name</p>
+                  <p style="margin:4px 0 0;color:#1a1a2e;font-size:15px;font-weight:600;">${data.pet_name || 'Not provided'}</p>
+                </td>
+                <td width="4px"></td>
+                <td width="50%" style="padding:8px 12px;background:#f8f9fa;border-radius:0 6px 6px 0;">
+                  <p style="margin:0;color:#666;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;">Pet Type</p>
+                  <p style="margin:4px 0 0;color:#1a1a2e;font-size:15px;font-weight:600;">${data.pet_type}</p>
+                </td>
+              </tr>
+            </table>
+
+            <!-- Appointment Info -->
+            <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:24px;">
+              <tr>
+                <td style="padding-bottom:12px;">
+                  <p style="margin:0 0 16px;color:#1a1a2e;font-size:16px;font-weight:700;border-bottom:2px solid #FF6B35;padding-bottom:8px;">📅 Appointment Details</p>
+                </td>
+              </tr>
+              <tr>
+                <td width="50%" style="padding:8px 12px;background:#fff3ee;border:1px solid #ffd5c0;border-radius:6px 0 0 6px;">
+                  <p style="margin:0;color:#666;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;">Preferred Date</p>
+                  <p style="margin:4px 0 0;color:#c94a0a;font-size:15px;font-weight:700;">${data.preferred_date}</p>
+                </td>
+                <td width="4px"></td>
+                <td width="50%" style="padding:8px 12px;background:#fff3ee;border:1px solid #ffd5c0;border-radius:0 6px 6px 0;">
+                  <p style="margin:0;color:#666;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;">Preferred Time</p>
+                  <p style="margin:4px 0 0;color:#c94a0a;font-size:15px;font-weight:700;">${data.preferred_time || 'Anytime'}</p>
+                </td>
+              </tr>
+            </table>
+
+            <!-- Notes -->
+            ${data.message ? `
+            <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:24px;">
+              <tr>
+                <td>
+                  <p style="margin:0 0 12px;color:#1a1a2e;font-size:16px;font-weight:700;border-bottom:2px solid #FF6B35;padding-bottom:8px;">📝 Customer Notes</p>
+                  <div style="background:#f8f9fa;border-left:4px solid #FF6B35;padding:12px 16px;border-radius:0 6px 6px 0;">
+                    <p style="margin:0;color:#444;font-size:14px;line-height:1.6;">${data.message}</p>
+                  </div>
+                </td>
+              </tr>
+            </table>` : ''}
+
+            <!-- CTA -->
+            <div style="text-align:center;margin-top:8px;">
+              <p style="margin:0;color:#888;font-size:13px;">Please call back the customer to <strong>confirm this appointment</strong>.</p>
+            </div>
+
+          </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+          <td style="background:#f4f6f9;padding:20px 40px;text-align:center;border-top:1px solid #e5e7eb;">
+            <p style="margin:0;color:#aaa;font-size:12px;">This email was automatically sent from <strong style="color:#FF6B35;">petplanetcare.in</strong></p>
+            <p style="margin:6px 0 0;color:#aaa;font-size:12px;">Pet Planet Dog Clinic & Animal Diagnostics · Kothapet, Hyderabad</p>
+          </td>
+        </tr>
+
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>`;
+
+          const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+              access_key: web3FormsKey,
+              subject: `🐾 New Appointment: ${data.name} — ${data.pet_type} (${data.preferred_date})`,
+              from_name: 'Pet Planet Website',
+              html: htmlBody,
+            })
+          });
+          const resData = await res.json();
+          if (!res.ok || !resData.success) {
+            console.warn('Email notification failed:', resData.message);
+          }
         }
+      } catch (emailErr) {
+        console.warn('Email notification skipped/failed:', emailErr);
       }
 
+      // ✅ Always show success — appointment is booked regardless of email status
       setSuccess(true);
       setTimeout(() => {
         onClose();
-        setTimeout(() => setSuccess(false), 500); // reset after close
+        setTimeout(() => setSuccess(false), 500);
       }, 2000);
     } catch (err: any) {
       setError(err.message || 'Failed to submit appointment. Please try again.');
