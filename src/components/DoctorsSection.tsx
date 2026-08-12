@@ -168,7 +168,7 @@ export function DoctorsSection() {
             </div>
             <div className="p-4 sm:p-5 bg-gray-50 border-t border-gray-200/80">
               <h4 className="text-base sm:text-lg font-display font-bold text-gray-900 mb-1">
-                Pet Planet Clinical &amp; Staff Family
+                Team Pet Planet
               </h4>
               <p className="text-xs sm:text-sm text-gray-600">
                 Our dedicated team of veterinarians, veterinary nurses, lab technicians, and care assistants working together to deliver excellence for every pet.

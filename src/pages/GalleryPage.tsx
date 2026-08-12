@@ -72,9 +72,49 @@ const galleryItems = [
   },
   {
     title: 'Happy Shih Tzu Patient',
-    category: 'Happy Pets',
+    category: 'Grooming',
     image: '/shih-tzu-gallery-video.mp4',
     isVideo: true,
+    imagePosition: 'object-center',
+  },
+  {
+    title: 'Grooming',
+    category: 'Grooming',
+    image: '/gallery-video-harry.mp4',
+    isVideo: true,
+    imagePosition: 'object-center',
+  },
+  {
+    title: 'Urinary Catheterisation',
+    category: 'Urinary Catheterisation',
+    image: '/gallery-video-123431.mp4',
+    isVideo: true,
+    imagePosition: 'object-center',
+  },
+  {
+    title: 'Urinary Catheterisation',
+    category: 'Clinical Care',
+    image: '/gallery-video-123223.mp4',
+    isVideo: true,
+    imagePosition: 'object-center',
+  },
+  {
+    title: 'General Health Checkup',
+    category: 'Otoscopic Examination',
+    image: '/gallery-video-122657.mp4',
+    isVideo: true,
+    imagePosition: 'object-center',
+  },
+  {
+    title: 'Clinic Visit Moment',
+    category: 'Grooming',
+    image: '/gallery-image-131859.jpg',
+    imagePosition: 'object-center',
+  },
+  {
+    title: 'Happy Clinic Visit',
+    category: 'Grooming',
+    image: '/gallery-image-131909.jpg',
     imagePosition: 'object-center',
   },
   {
@@ -197,12 +237,14 @@ export function GalleryPage() {
                       muted
                       loop
                       playsInline
+                      preload="metadata"
                       className={`w-full h-full object-cover ${item.imagePosition || 'object-center'} group-hover:scale-105 transition-transform duration-700`}
                     />
                   ) : (
                     <img
                       src={item.image}
                       alt={item.title}
+                      loading="lazy"
                       className={`w-full h-full object-cover ${item.imagePosition || 'object-bottom'} group-hover:scale-105 transition-transform duration-700`}
                     />
                   )}
