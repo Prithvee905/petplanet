@@ -27,5 +27,10 @@ dist-ssr
 public/*.mp4
 public/*.mov
 public/*.MOV
-# Exception: compressed web-optimised video is small enough
+# Exceptions: compressed web-optimised videos (small enough for git)
 !public/clinic-gallery-hero-web.mp4
+!public/shih-tzu-gallery-video-opt.mp4
+!public/gallery-video-harry-opt.mp4
+!public/gallery-video-123431-opt.mp4
+!public/gallery-video-123223-opt.mp4
+!public/gallery-video-122657-opt.mp4
