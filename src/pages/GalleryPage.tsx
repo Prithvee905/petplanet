@@ -2,6 +2,48 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Doodle } from '../components/Doodle';
 import { Camera } from 'lucide-react';
+import { useRef, useEffect } from 'react';
+
+// Smart video component: loads & plays only when visible on screen
+function AutoPlayVideo({ src, className }: { src: string; className: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Set preload=auto and play when visible
+            video.preload = 'auto';
+            video.play().catch(() => {});
+          } else {
+            // Pause and stop buffering when off-screen
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.25 } // start playing when 25% visible
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <video
+      ref={videoRef}
+      src={src}
+      muted
+      loop
+      playsInline
+      preload="none"
+      className={className}
+    />
+  );
+}
 
 const galleryItems = [
   {
@@ -72,36 +114,36 @@ const galleryItems = [
   },
   {
     title: 'Happy Shih Tzu Patient',
-    category: 'Grooming',
-    image: '/shih-tzu-gallery-video.mp4',
+    category: 'Happy Pets',
+    image: '/shih-tzu-gallery-video-opt.mp4',
     isVideo: true,
     imagePosition: 'object-center',
   },
   {
     title: 'Grooming',
     category: 'Grooming',
-    image: '/gallery-video-harry.mp4',
-    isVideo: true,
-    imagePosition: 'object-center',
-  },
-  {
-    title: 'Urinary Catheterisation',
-    category: 'Urinary Catheterisation',
-    image: '/gallery-video-123431.mp4',
+    image: '/gallery-video-harry-opt.mp4',
     isVideo: true,
     imagePosition: 'object-center',
   },
   {
     title: 'Urinary Catheterisation',
     category: 'Clinical Care',
-    image: '/gallery-video-123223.mp4',
+    image: '/gallery-video-123431-opt.mp4',
+    isVideo: true,
+    imagePosition: 'object-center',
+  },
+  {
+    title: 'Urinary Catheterisation',
+    category: 'Clinical Care',
+    image: '/gallery-video-123223-opt.mp4',
     isVideo: true,
     imagePosition: 'object-center',
   },
   {
     title: 'General Health Checkup',
-    category: 'Otoscopic Examination',
-    image: '/gallery-video-122657.mp4',
+    category: 'Clinical Care',
+    image: '/gallery-video-122657-opt.mp4',
     isVideo: true,
     imagePosition: 'object-center',
   },
@@ -231,13 +273,8 @@ export function GalleryPage() {
               >
                 <div className="relative h-72 sm:h-80 md:h-96 overflow-hidden bg-black">
                   {item.isVideo ? (
-                    <video
+                    <AutoPlayVideo
                       src={item.image}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      preload="metadata"
                       className={`w-full h-full object-cover ${item.imagePosition || 'object-center'} group-hover:scale-105 transition-transform duration-700`}
                     />
                   ) : (
