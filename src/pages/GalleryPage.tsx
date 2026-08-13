@@ -16,16 +16,18 @@ function AutoPlayVideo({ src, className }: { src: string; className: string }) {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Set preload=auto and play when visible
-            video.preload = 'auto';
-            video.play().catch(() => {});
+            // Load & play when visible
+            if (video.paused) {
+              video.load();
+              video.play().catch(() => {});
+            }
           } else {
-            // Pause and stop buffering when off-screen
+            // Pause when scrolled off screen
             video.pause();
           }
         });
       },
-      { threshold: 0.25 } // start playing when 25% visible
+      { threshold: 0.1, rootMargin: '100px' } // start loading 100px before entering view
     );
 
     observer.observe(video);
@@ -39,7 +41,7 @@ function AutoPlayVideo({ src, className }: { src: string; className: string }) {
       muted
       loop
       playsInline
-      preload="none"
+      preload="metadata"
       className={className}
     />
   );
