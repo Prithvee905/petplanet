@@ -21,7 +21,7 @@ const services = [
     icon: ClipboardPlus,
     title: 'OPD / Outpatient Consultations',
     description: 'Convenient outpatient medical consultations and ongoing therapeutic management for acute and chronic conditions.',
-    image: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=800&auto=format&fit=crop',
+    image: '/opd-tortoise.png',
   },
   {
     icon: Video,
