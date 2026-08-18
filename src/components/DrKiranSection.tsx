@@ -1,6 +1,33 @@
-import { motion } from 'framer-motion';
+import { motion, useInView, useMotionValue, useSpring } from 'framer-motion';
+import { useRef, useEffect } from 'react';
 import { Doodle } from './Doodle';
 import { Quote } from 'lucide-react';
+
+function AnimatedCounter({ end, suffix }: { end: number; suffix: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-50px' });
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, {
+    damping: 60,
+    stiffness: 100,
+  });
+
+  useEffect(() => {
+    if (isInView) {
+      motionValue.set(end);
+    }
+  }, [isInView, end, motionValue]);
+
+  useEffect(() => {
+    springValue.on('change', (latest) => {
+      if (ref.current) {
+        ref.current.textContent = Intl.NumberFormat('en-US').format(Math.floor(latest)) + suffix;
+      }
+    });
+  }, [springValue, suffix]);
+
+  return <span ref={ref}>0{suffix}</span>;
+}
 
 export function DrKiranSection() {
   return (
@@ -89,8 +116,8 @@ export function DrKiranSection() {
             {/* Highlights */}
             <div className="grid grid-cols-2 gap-4 mt-10">
               {[
-                { number: '23+', label: 'Years Experience' },
-                { number: '1800+', label: 'Pet Families' },
+                { number: 23, suffix: '+', label: 'Years Experience' },
+                { number: 5000, suffix: '+', label: 'Happy Pet Families' },
               ].map((s, i) => (
                 <motion.div
                   key={i}
@@ -100,7 +127,9 @@ export function DrKiranSection() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
                 >
-                  <div className="text-3xl font-display font-bold text-orange">{s.number}</div>
+                  <div className="text-3xl font-display font-bold text-orange">
+                    <AnimatedCounter end={s.number} suffix={s.suffix} />
+                  </div>
                   <div className="text-gray-400 text-xs uppercase tracking-wider mt-1">{s.label}</div>
                 </motion.div>
               ))}

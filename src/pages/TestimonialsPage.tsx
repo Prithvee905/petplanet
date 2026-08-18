@@ -77,7 +77,7 @@ export function TestimonialsPage() {
     <>
       <Helmet>
         <title>Client Testimonials &amp; Reviews | Pet Planet Dog Clinic</title>
-        <meta name="description" content="Read real reviews from pet parents in Hyderabad about Pet Planet Dog Clinic &amp; Animal Diagnostics. 4.7 star rating with 1,800+ happy clients." />
+        <meta name="description" content="Read real reviews from pet parents in Hyderabad about Pet Planet Dog Clinic &amp; Animal Diagnostics. 4.7 star rating with 5,000+ happy clients." />
       </Helmet>
 
       <div className="pt-28 pb-16 bg-black text-white relative overflow-hidden">
@@ -92,7 +92,7 @@ export function TestimonialsPage() {
           >
             <div className="inline-flex items-center gap-2 bg-orange/20 text-orange border border-orange/30 px-4 py-1.5 rounded-full text-sm font-semibold mb-4">
               <Star size={16} className="fill-orange text-orange" />
-              <span>4.7 Star Rating (1,800+ Verified Reviews)</span>
+              <span>4.7 Star Rating (5,000+ Verified Reviews)</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
               Client <span className="text-orange">Testimonials.</span>

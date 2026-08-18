@@ -1,5 +1,32 @@
-import { motion } from 'framer-motion';
+import { motion, useInView, useMotionValue, useSpring } from 'framer-motion';
+import { useRef, useEffect } from 'react';
 import { Doodle } from './Doodle';
+
+function AnimatedCounter({ end, suffix }: { end: number; suffix: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-50px' });
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, {
+    damping: 60,
+    stiffness: 100,
+  });
+
+  useEffect(() => {
+    if (isInView) {
+      motionValue.set(end);
+    }
+  }, [isInView, end, motionValue]);
+
+  useEffect(() => {
+    springValue.on('change', (latest) => {
+      if (ref.current) {
+        ref.current.textContent = Intl.NumberFormat('en-US').format(Math.floor(latest)) + suffix;
+      }
+    });
+  }, [springValue, suffix]);
+
+  return <span ref={ref}>0{suffix}</span>;
+}
 
 export function AboutSection() {
   return (
@@ -42,7 +69,7 @@ export function AboutSection() {
               { number: '2009', label: 'Est. Year' },
               { number: '17+', label: 'Years Clinic Excellence' },
               { number: '4.7 ★', label: 'Average Client Rating' },
-              { number: '1,800+', label: 'Happy Pet Patient Reviews' },
+              { animatedNumber: 5000, suffix: '+', label: 'Happy Pet Patient Reviews' },
             ].map((stat, i) => (
               <motion.div
                 key={i}
@@ -52,7 +79,13 @@ export function AboutSection() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
               >
-                <div className="text-4xl font-display font-bold text-black mb-2">{stat.number}</div>
+                <div className="text-4xl font-display font-bold text-black mb-2">
+                  {'animatedNumber' in stat ? (
+                    <AnimatedCounter end={stat.animatedNumber as number} suffix={stat.suffix as string} />
+                  ) : (
+                    stat.number
+                  )}
+                </div>
                 <div className="text-sm font-medium text-gray-800 uppercase tracking-wider">{stat.label}</div>
               </motion.div>
             ))}

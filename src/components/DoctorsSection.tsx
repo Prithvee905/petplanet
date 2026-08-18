@@ -171,7 +171,7 @@ export function DoctorsSection() {
                 Team Pet Planet
               </h4>
               <p className="text-xs sm:text-sm text-gray-600">
-                Our dedicated team of veterinarians, veterinary nurses, lab technicians, and care assistants working together to deliver excellence for every pet.
+                Our dedicated team of veterinarians, veterinary assistants, lab technicians, and support staff working together to deliver excellence for every pet.
               </p>
             </div>
           </motion.div>

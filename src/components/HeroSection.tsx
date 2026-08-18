@@ -115,7 +115,7 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
           {/* Set 1 */}
           {[
             { icon: '⚡', text: 'Consultation Fee: Starting at ₹500' },
-            { icon: '⭐', text: '4.7 ★ Rating (1,800+ Verified Clients)' },
+            { icon: '⭐', text: '4.7 ★ Rating (5,000+ Verified Clients)' },
             { icon: '🐾', text: '17+ Years Clinic Excellence' },
             { icon: '🩺', text: '20+ Years Vet Surgical Expertise' },
             { icon: '⏰', text: 'Open 365 Days: 9:00 AM - 9:00 PM' },
@@ -129,7 +129,7 @@ export function HeroSection({ onBookClick }: HeroSectionProps) {
           {/* Set 2 — exact duplicate for seamless loop */}
           {[
             { icon: '⚡', text: 'Consultation Fee: Starting at ₹500' },
-            { icon: '⭐', text: '4.7 ★ Rating (1,800+ Verified Clients)' },
+            { icon: '⭐', text: '4.7 ★ Rating (5,000+ Verified Clients)' },
             { icon: '🐾', text: '17+ Years Clinic Excellence' },
             { icon: '🩺', text: '20+ Years Vet Surgical Expertise' },
             { icon: '⏰', text: 'Open 365 Days: 9:00 AM - 9:00 PM' },
