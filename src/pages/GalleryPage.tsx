@@ -5,7 +5,7 @@ import { Camera } from 'lucide-react';
 import { useRef, useEffect } from 'react';
 
 // Smart video component: loads & plays only when visible on screen
-function AutoPlayVideo({ src, className }: { src: string; className: string }) {
+function AutoPlayVideo({ src, className, hasAudio }: { src: string; className: string; hasAudio?: boolean }) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -19,7 +19,10 @@ function AutoPlayVideo({ src, className }: { src: string; className: string }) {
             // Load & play when visible
             if (video.paused) {
               video.load();
-              video.play().catch(() => {});
+              // Browsers may block autoplay with audio, catch the error
+              video.play().catch(() => {
+                console.log("Autoplay blocked by browser. User interaction required.");
+              });
             }
           } else {
             // Pause when scrolled off screen
@@ -38,7 +41,8 @@ function AutoPlayVideo({ src, className }: { src: string; className: string }) {
     <video
       ref={videoRef}
       src={src}
-      muted
+      muted={!hasAudio}
+      controls={hasAudio}
       loop
       playsInline
       preload="metadata"
@@ -48,6 +52,14 @@ function AutoPlayVideo({ src, className }: { src: string; className: string }) {
 }
 
 const galleryItems = [
+  {
+    title: 'Happy Pet Patient',
+    category: 'Happy Pets',
+    image: '/gallery-whatsapp-20260815-opt.mp4',
+    isVideo: true,
+    hasAudio: true,
+    imagePosition: 'object-center',
+  },
   {
     title: 'Pet Planet Clinic Frontage & Storefront',
     category: 'Clinic Frontside',
@@ -277,6 +289,7 @@ export function GalleryPage() {
                   {item.isVideo ? (
                     <AutoPlayVideo
                       src={item.image}
+                      hasAudio={item.hasAudio}
                       className={`w-full h-full object-cover ${item.imagePosition || 'object-center'} group-hover:scale-105 transition-transform duration-700`}
                     />
                   ) : (
