@@ -142,7 +142,7 @@ const galleryItems = [
   },
   {
     title: 'Urinary Catheterisation',
-    category: 'Clinical Care',
+    category: 'Urinary Catheterisation',
     image: '/gallery-video-123431-opt.mp4',
     isVideo: true,
     imagePosition: 'object-center',
@@ -156,7 +156,7 @@ const galleryItems = [
   },
   {
     title: 'General Health Checkup',
-    category: 'Clinical Care',
+    category: 'Otoscopic Examination',
     image: '/gallery-video-122657-opt.mp4',
     isVideo: true,
     imagePosition: 'object-center',
