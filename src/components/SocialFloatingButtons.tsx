@@ -4,7 +4,7 @@ export function SocialFloatingButtons() {
   const phoneNumber = '+917702661567';
   const whatsappUrl = 'https://wa.me/917702661567';
   const instagramUrl = 'https://www.instagram.com/pet_planet_hyd?igsh=YjJ3aWdnNW84Nzc2';
-  const facebookUrl = 'https://www.facebook.com/profile.php?id=100063824896826';
+  const facebookUrl = 'https://www.facebook.com/PetPlanetDogClinic';
 
   return (
     <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col gap-2 sm:gap-3 pointer-events-none">
